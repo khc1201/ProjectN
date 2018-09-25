@@ -43,6 +43,7 @@ public class CameraController : MonoBehaviour {
         nowView.DoHide();
         nextView.DoShow();
         nowView = nextView;
+        csEventManager.Instance.PostNotification(EVENT_TYPE.CHANGE_BUTTON, this, nowView);
         nextView = null;
     }
 }
