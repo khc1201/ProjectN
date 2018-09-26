@@ -10,11 +10,6 @@ public class ShowHud : MonoBehaviour, IListener {
 	void Start ()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_HUD, this);
-
-        //한 번 초기화 해 줌
-        //ViewObj NowView = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>().nowView;
-        //csEventManager.Instance.PostNotification(EVENT_TYPE.SHOW_HUD, this, NowView);
-        StartCoroutine(LateStart());
 	}
     public IEnumerator LateStart()
     {

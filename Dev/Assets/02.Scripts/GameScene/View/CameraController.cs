@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour,IListener {
     public ViewObj nowView;
     public ViewObj nextView;
     public List<ViewObj> Views;
@@ -11,12 +11,25 @@ public class CameraController : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
+        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_PLAYERDATA, this);
         foreach(var v in Views)
         {
             v._cam = Cameras.transform.Find(v._name).gameObject;
             v._ui = UIs.transform.Find(v._name).gameObject;
         }
-        nowView = Views.Find(x => x._index == 10);
+    }
+    public void InitView(PlayData data)
+    {
+        nowView = Views.Find(x => x._index == data.NowView);
+        OnMoveToView(nowView._index);
+        //csEventManager.Instance.PostNotification(EVENT_TYPE.SHOW_HUD, this, nowView);
+    }
+    public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
+    {
+        if (et == EVENT_TYPE.INIT_PLAYERDATA)
+        {
+            InitView(param as PlayData);
+        }
     }
 	public void OnMoveToView(int viewIndex)
     {
