@@ -5,24 +5,34 @@ using UnityEngine;
 public class TriggerListener : MonoBehaviour, IListener {
     public bool IsReady;
     public List<TriggerUnit> Triggers;
+
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.SEND_TRIGGER, this);
+        //for test
+        Debug.Log("Step0");
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.HIDE_TRIGGER, this);
     }
+
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
+        //for test
+        Debug.Log("STEP3-1");
+        /*
         if (param == null)
         {
             Debug.LogError(string.Format("null param : {0} 이 전달받은 트리거의 인덱스가 없습니다. 신호자 : {1}", this.name, sender.name));
             return;
-        }
+        }*/
         switch (et)
         {
             case EVENT_TYPE.SEND_TRIGGER:
                 {
-                    StartTrigger(param as string);
+                    //for test
+                    Debug.Log("STEP3-2");
+
+                    StartTrigger(param.ToString());
                     break;
                 }
             case EVENT_TYPE.SHOW_TRIGGER:
@@ -57,7 +67,8 @@ public class TriggerListener : MonoBehaviour, IListener {
             Debug.LogError(string.Format("{0} 의 IsValid 가 false 입니다", target.index));
             return;
         }
-
+        //for test
+        Debug.Log("STEP4");
         if (target.IsShowButton)    Trigger_ShowButton(target, true);
         if (target.IsHideButton)    Trigger_ShowButton(target, false);
         if (target.IsShowTrigger)   Trigger_ShowTrigger(target, true);
@@ -74,12 +85,16 @@ public class TriggerListener : MonoBehaviour, IListener {
     }
     private void Trigger_StartMotion(TriggerUnit target)
     {
-        if(target.Play_MotionName == null)
+        //for test
+        Debug.Log("STEP5");
+        if (target.Play_MotionName == null)
         {
             Debug.LogError("Trigger_StartMotion 에서 모션을 실행하려고 했으나 target 의 모션명이 등록되어 있지 않습니다.");
             return;
         }
         csEventManager.Instance.PostNotification(EVENT_TYPE.MOTION_START, this, target.Play_MotionName);
+        //for test
+        Debug.Log("STEP5-1");
     }
 
     private void Trigger_SendTrigger(string idx)

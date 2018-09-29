@@ -14,9 +14,18 @@ public class MotionTrigger : MonoBehaviour, IListener
     }
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
-        if(et == EVENT_TYPE.MOTION_START && index == param as string)
+        //for test
+        Debug.Log("STEP6-1");
+        if (et == EVENT_TYPE.MOTION_START)
         {
-            StartMotion();
+            //for test
+            Debug.Log("STEP6-2 param = " + param.ToString() + " / index = " + this.index);
+            if (this.index == param.ToString())
+            {
+                //for test
+                Debug.Log("STEP6-3");
+                StartMotion();
+            }
         }
     }
     public void StartMotion()
