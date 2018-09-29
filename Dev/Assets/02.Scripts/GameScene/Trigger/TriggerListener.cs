@@ -40,31 +40,53 @@ public class TriggerListener : MonoBehaviour, IListener {
     public void ShowTrigger(string idx)
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
-        target.IsValid = true;
+        if(!target.IsValid) target.IsValid = true;
     }
     public void HideTrigger(string idx)
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
-        target.IsValid = false;
+        if(target.IsValid) target.IsValid = false;
     }
 
     public void StartTrigger(string idx)
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
-        if(target.IsShowButton)     Trigger_ShowButton(target, true);
-        if(target.IsHideButton)     Trigger_ShowButton(target, false);
-        if(target.IsShowTrigger)    Trigger_ShowTrigger(target, true);
-        if(target.IsHideTrigger)    Trigger_ShowTrigger(target, false);
-        if (target.IsShowObject) Trigger_ShowObject(target, true);
-        if (target.IsHideObject) Trigger_ShowObject(target, false);
-        //if(target.IsPlayMotion)   구현 예정
-        //if(target.IsPlaySound)    구현 예정
-        if(target.IsSendTrigger)    Trigger_SendTrigger(target.Send_TriggerName); 
+        
+        if (!(target.IsValid))
+        {
+            Debug.LogError(string.Format("{0} 의 IsValid 가 false 입니다", target.index));
+            return;
+        }
+
+        if (target.IsShowButton)    Trigger_ShowButton(target, true);
+        if (target.IsHideButton)    Trigger_ShowButton(target, false);
+        if (target.IsShowTrigger)   Trigger_ShowTrigger(target, true);
+        if (target.IsHideTrigger)   Trigger_ShowTrigger(target, false);
+        if (target.IsShowObject)    Trigger_ShowObject(target, true);
+        if (target.IsHideObject)    Trigger_ShowObject(target, false);
+        if (target.IsPlayMotion)    Trigger_StartMotion(target);
+        if (target.IsPlaySound)     Trigger_PlaySound(target.Play_SoundName);
+        if (target.IsSendTrigger)   Trigger_SendTrigger(target.Send_TriggerName); 
     }
+    private void Trigger_PlaySound(string soundName)
+    {
+        AudioManager.singletone.Play(soundName);
+    }
+    private void Trigger_StartMotion(TriggerUnit target)
+    {
+        if(target.Play_MotionName == null)
+        {
+            Debug.LogError("Trigger_StartMotion 에서 모션을 실행하려고 했으나 target 의 모션명이 등록되어 있지 않습니다.");
+            return;
+        }
+        csEventManager.Instance.PostNotification(EVENT_TYPE.MOTION_START, this, target.Play_MotionName);
+    }
+
     private void Trigger_SendTrigger(string idx)
     {
         csEventManager.Instance.PostNotification(EVENT_TYPE.SEND_TRIGGER, this, idx);
     }
+
     private void Trigger_ShowButton(TriggerUnit target, bool isShow)
     {
         foreach (var e in target.Show_Button)
@@ -72,6 +94,7 @@ public class TriggerListener : MonoBehaviour, IListener {
             e.SetActive(isShow);
         }
     }
+
     private void Trigger_ShowObject(TriggerUnit target, bool isShow)
     {
         if (isShow)
@@ -89,6 +112,7 @@ public class TriggerListener : MonoBehaviour, IListener {
             }
         }
     }
+
     private void Trigger_ShowTrigger(TriggerUnit target, bool isShow)
     {
         if (isShow)

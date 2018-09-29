@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour,IListener {
     public List<ViewObj> Views;
     public GameObject Cameras;
     public GameObject UIs;
+    public GameObject Triggers;
     // Use this for initialization
 	void Start ()
     {
@@ -16,6 +17,7 @@ public class CameraController : MonoBehaviour,IListener {
         {
             v._cam = Cameras.transform.Find(v._name).gameObject;
             v._ui = UIs.transform.Find(v._name).gameObject;
+            v._triggerListener = Triggers.transform.Find(v._name).gameObject;
         }
     }
     public void InitView(PlayData data)

@@ -5,5 +5,17 @@
     DO_CLICK,
     SEND_TRIGGER,
     SHOW_TRIGGER,
-    HIDE_TRIGGER
+    HIDE_TRIGGER,
+    MOTION_START
 };
+public enum TRIGGER_STEP
+{
+    FIRST,SECOND,THIRD,FOURTH
+};
+public enum MOTION_TYPE
+{
+    ROTATE,
+    FADEOUT,
+    FADEIN,
+    MOVE
+}

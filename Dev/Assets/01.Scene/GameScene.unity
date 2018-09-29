@@ -325,6 +325,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 17045772}
+--- !u!1 &23948301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 23948302}
+  m_Layer: 0
+  m_Name: V2200_DressRoom_Laundry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &23948302
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 23948301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &25450171 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4199426004562478, guid: a61d0b4c41dabf548be1eb07e22d847a,
@@ -342,7 +370,7 @@ GameObject:
   - component: {fileID: 28103359}
   - component: {fileID: 28103358}
   m_Layer: 0
-  m_Name: 32_Kitchen_Table
+  m_Name: V3200_Kitchen_Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,7 +928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 85695973}
   m_Layer: 5
-  m_Name: 11_BedRoom_Shelves
+  m_Name: V1100_BedRoom_Shelves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1556,7 +1584,7 @@ GameObject:
   - component: {fileID: 168882834}
   - component: {fileID: 168882833}
   m_Layer: 0
-  m_Name: 41_LivingRoom_Sopa
+  m_Name: V4100_LivingRoom_Sopa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,6 +1653,34 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &170494305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 170494306}
+  m_Layer: 0
+  m_Name: V1200_BedRoom_Bed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &170494306
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 170494305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &173623139
 Prefab:
   m_ObjectHideFlags: 0
@@ -1952,6 +2008,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4667540851475762, guid: 9d4c3b0bbc620b547aaa8f15ebf91c8f,
     type: 2}
   m_PrefabInternal: {fileID: 229605883}
+--- !u!1 &231675863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 231675864}
+  m_Layer: 0
+  m_Name: V3000_Kitchen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &231675864
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 231675863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &233448476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2188,53 @@ Transform:
   m_PrefabParentObject: {fileID: 4199426004562478, guid: a61d0b4c41dabf548be1eb07e22d847a,
     type: 2}
   m_PrefabInternal: {fileID: 1517262943}
+--- !u!1 &252297285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 252297286}
+  m_Layer: 0
+  m_Name: Triggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &252297286
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 252297285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1503467259}
+  - {fileID: 1786493349}
+  - {fileID: 170494306}
+  - {fileID: 1615760482}
+  - {fileID: 1701496807}
+  - {fileID: 284040068}
+  - {fileID: 23948302}
+  - {fileID: 1024923357}
+  - {fileID: 231675864}
+  - {fileID: 1463342407}
+  - {fileID: 1604090697}
+  - {fileID: 1093544139}
+  - {fileID: 1908763908}
+  - {fileID: 291715557}
+  - {fileID: 697755457}
+  - {fileID: 1352407266}
+  - {fileID: 1115965532}
+  - {fileID: 1350370833}
+  - {fileID: 1288087221}
+  m_Father: {fileID: 432138644}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255743980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255743981}
   m_Layer: 5
-  m_Name: 52_Toilet_Sink
+  m_Name: V5200_Toilet_Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2357,6 +2488,34 @@ Prefab:
     - {fileID: 95195789292916960, guid: a61d0b4c41dabf548be1eb07e22d847a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a61d0b4c41dabf548be1eb07e22d847a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &284040067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 284040068}
+  m_Layer: 0
+  m_Name: V2100_DressRoom_Cabinet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &284040068
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 284040067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289781919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,7 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 42
+  NextInt: 4200
 --- !u!114 &289781922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2543,6 +2702,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4544954519468958, guid: 75934112395cff348b15cdbffefcc9a8,
     type: 2}
   m_PrefabInternal: {fileID: 290201853}
+--- !u!1 &291715556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 291715557}
+  m_Layer: 0
+  m_Name: V4100_LivingRoom_Sopa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &291715557
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 291715556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &292304541
 Prefab:
   m_ObjectHideFlags: 0
@@ -2905,7 +3092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 33
+  NextInt: 3300
 --- !u!114 &333581466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3577,7 +3764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417833626}
   m_Layer: 5
-  m_Name: 43_LivingRoom_TV
+  m_Name: V4300_LivingRoom_TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3663,142 +3850,6 @@ Transform:
   m_Father: {fileID: 140742145}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &425404306
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 425404307}
-  - component: {fileID: 425404311}
-  - component: {fileID: 425404310}
-  - component: {fileID: 425404309}
-  - component: {fileID: 425404308}
-  m_Layer: 5
-  m_Name: TestButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &425404307
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 425404306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1214904820}
-  m_Father: {fileID: 530052692}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &425404308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 425404306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 907190bf05f3e3e4ea57075189e696f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SendTriggerList:
-  - T0001
---- !u!114 &425404309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 425404306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 425404310}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 425404308}
-        m_MethodName: SendTrigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &425404310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 425404306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &425404311
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 425404306}
 --- !u!1 &429628838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3910,7 @@ Transform:
   - {fileID: 69204086}
   - {fileID: 1508456551}
   - {fileID: 683075768}
+  - {fileID: 252297286}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4305,7 +4357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507520112}
   m_Layer: 5
-  m_Name: 20_DressRoom
+  m_Name: V2000_DressRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4437,7 +4489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 525437729}
   m_Layer: 5
-  m_Name: 41_LivingRoom_Sopa
+  m_Name: V4100_LivingRoom_Sopa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4470,7 +4522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530052692}
   m_Layer: 5
-  m_Name: 12_BedRoom_Bed
+  m_Name: V1200_BedRoom_Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4485,8 +4537,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 425404307}
+  m_Children: []
   m_Father: {fileID: 53074166}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4793,7 +4844,7 @@ GameObject:
   - component: {fileID: 580259190}
   - component: {fileID: 580259189}
   m_Layer: 0
-  m_Name: 51_Toilet_Mirror
+  m_Name: V5100_Toilet_Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4964,7 +5015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598160940}
   m_Layer: 5
-  m_Name: 21_DressRoom_Cabinet
+  m_Name: V2100_DressRoom_Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5447,7 +5498,7 @@ GameObject:
   - component: {fileID: 664786353}
   - component: {fileID: 664786352}
   m_Layer: 0
-  m_Name: 40_LivingRoom
+  m_Name: V4000_LivingRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5900,6 +5951,34 @@ Transform:
   m_Father: {fileID: 323680954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &697755456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 697755457}
+  m_Layer: 0
+  m_Name: V4200_LivingRoom_Rug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &697755457
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 697755456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &699429404
 Prefab:
   m_ObjectHideFlags: 0
@@ -6059,7 +6138,7 @@ GameObject:
   - component: {fileID: 726226042}
   - component: {fileID: 726226041}
   m_Layer: 0
-  m_Name: 33_Kitchen_Refri
+  m_Name: V3300_Kitchen_Refri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6473,7 +6552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798538178}
   m_Layer: 5
-  m_Name: 22_DressRoom_Laundry
+  m_Name: V2200_DressRoom_Laundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6659,7 +6738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 11
+  NextInt: 1100
 --- !u!114 &812296636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6757,7 +6836,7 @@ GameObject:
   - component: {fileID: 812501222}
   - component: {fileID: 812501221}
   m_Layer: 0
-  m_Name: 43_LivingRoom_TV
+  m_Name: V4300_LivingRoom_TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7567,7 +7646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 21
+  NextInt: 2100
 --- !u!114 &880851646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7767,7 +7846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 898339743}
   m_Layer: 5
-  m_Name: 50_Toilet
+  m_Name: V5000_Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8160,7 +8239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 13
+  NextInt: 1300
 --- !u!114 &924698900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8489,7 +8568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 32
+  NextInt: 3200
 --- !u!114 &935402479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8790,7 +8869,7 @@ GameObject:
   - component: {fileID: 964731616}
   - component: {fileID: 964731615}
   m_Layer: 0
-  m_Name: 13_BedRoom_Desk
+  m_Name: V1300_BedRoom_Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9249,7 +9328,7 @@ GameObject:
   - component: {fileID: 1008917651}
   - component: {fileID: 1008917650}
   m_Layer: 0
-  m_Name: 10_BedRoom
+  m_Name: V1000_BedRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9349,6 +9428,34 @@ Transform:
   m_Father: {fileID: 1388860679}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1024923356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1024923357}
+  m_Layer: 0
+  m_Name: V2300_DressRoom_Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1024923357
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024923356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027797431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9361,7 +9468,7 @@ GameObject:
   - component: {fileID: 1027797434}
   - component: {fileID: 1027797433}
   m_Layer: 0
-  m_Name: 52_Toilet_Sink
+  m_Name: V5200_Toilet_Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9713,6 +9820,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4707442942340936, guid: 8ed9e8e319a828549b51cab28533bbc9,
     type: 2}
   m_PrefabInternal: {fileID: 1088959447}
+--- !u!1 &1093544138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1093544139}
+  m_Layer: 0
+  m_Name: V3300_Kitchen_Refri
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1093544139
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093544138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094986752
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,7 +9958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 52
+  NextInt: 5200
 --- !u!114 &1103063125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9968,6 +10103,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4615658979568976, guid: 36d0ea1243a05b544b193c7f94c6f71a,
     type: 2}
   m_PrefabInternal: {fileID: 1107710087}
+--- !u!1 &1115965531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1115965532}
+  m_Layer: 0
+  m_Name: V5000_Toilet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1115965532
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115965531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1118162328
 Prefab:
   m_ObjectHideFlags: 0
@@ -10362,7 +10525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157089534}
   m_Layer: 5
-  m_Name: 51_Toilet_Mirror
+  m_Name: V5100_Toilet_Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10398,7 +10561,7 @@ GameObject:
   - component: {fileID: 1163513669}
   - component: {fileID: 1163513668}
   m_Layer: 0
-  m_Name: 23_DressRoom_Door
+  m_Name: V2300_DressRoom_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10900,6 +11063,7 @@ MonoBehaviour:
     _name: 
     _cam: {fileID: 0}
     _ui: {fileID: 0}
+    _triggerListener: {fileID: 0}
   nextView:
     _index: 0
     _doright: 0
@@ -10908,142 +11072,163 @@ MonoBehaviour:
     _name: 
     _cam: {fileID: 0}
     _ui: {fileID: 0}
+    _triggerListener: {fileID: 0}
   Views:
-  - _index: 10
-    _doright: 20
-    _doleft: 40
+  - _index: 1000
+    _doright: 2000
+    _doleft: 4000
     _doback: 0
-    _name: 10_BedRoom
+    _name: V1000_BedRoom
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 11
-    _doright: 12
-    _doleft: 13
-    _doback: 10
-    _name: 11_BedRoom_Shelves
+    _triggerListener: {fileID: 0}
+  - _index: 1100
+    _doright: 1200
+    _doleft: 1300
+    _doback: 1000
+    _name: V1100_BedRoom_Shelves
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 12
-    _doright: 13
-    _doleft: 11
-    _doback: 10
-    _name: 12_BedRoom_Bed
+    _triggerListener: {fileID: 0}
+  - _index: 1200
+    _doright: 1300
+    _doleft: 1100
+    _doback: 1000
+    _name: V1200_BedRoom_Bed
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 13
-    _doright: 11
-    _doleft: 12
-    _doback: 10
-    _name: 13_BedRoom_Desk
+    _triggerListener: {fileID: 0}
+  - _index: 1300
+    _doright: 1100
+    _doleft: 1200
+    _doback: 1000
+    _name: V1300_BedRoom_Desk
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 20
-    _doright: 30
-    _doleft: 10
+    _triggerListener: {fileID: 0}
+  - _index: 2000
+    _doright: 3000
+    _doleft: 1000
     _doback: 0
-    _name: 20_DressRoom
+    _name: V2000_DressRoom
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 21
-    _doright: 22
-    _doleft: 23
-    _doback: 20
-    _name: 21_DressRoom_Cabinet
+    _triggerListener: {fileID: 0}
+  - _index: 2100
+    _doright: 2200
+    _doleft: 2300
+    _doback: 2000
+    _name: V2100_DressRoom_Cabinet
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 22
-    _doright: 23
-    _doleft: 21
-    _doback: 20
-    _name: 22_DressRoom_Laundry
+    _triggerListener: {fileID: 0}
+  - _index: 2200
+    _doright: 2300
+    _doleft: 2100
+    _doback: 2000
+    _name: V2200_DressRoom_Laundry
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 23
-    _doright: 21
-    _doleft: 22
-    _doback: 20
-    _name: 23_DressRoom_Door
+    _triggerListener: {fileID: 0}
+  - _index: 2300
+    _doright: 2100
+    _doleft: 2200
+    _doback: 2000
+    _name: V2300_DressRoom_Door
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 30
-    _doright: 40
-    _doleft: 20
+    _triggerListener: {fileID: 0}
+  - _index: 3000
+    _doright: 4000
+    _doleft: 2000
     _doback: 0
-    _name: 30_Kitchen
+    _name: V3000_Kitchen
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 31
-    _doright: 32
-    _doleft: 33
-    _doback: 30
-    _name: 31_Kitchen_Sink
+    _triggerListener: {fileID: 0}
+  - _index: 3100
+    _doright: 3200
+    _doleft: 3300
+    _doback: 3000
+    _name: V3100_Kitchen_Sink
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 32
-    _doright: 33
-    _doleft: 31
-    _doback: 30
-    _name: 32_Kitchen_Table
+    _triggerListener: {fileID: 0}
+  - _index: 3200
+    _doright: 3300
+    _doleft: 3100
+    _doback: 3000
+    _name: V3200_Kitchen_Table
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 33
-    _doright: 31
-    _doleft: 32
-    _doback: 30
-    _name: 33_Kitchen_Refri
+    _triggerListener: {fileID: 0}
+  - _index: 3300
+    _doright: 3100
+    _doleft: 3200
+    _doback: 3000
+    _name: V3300_Kitchen_Refri
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 40
-    _doright: 10
-    _doleft: 30
+    _triggerListener: {fileID: 0}
+  - _index: 4000
+    _doright: 1000
+    _doleft: 3000
     _doback: 0
-    _name: 40_LivingRoom
+    _name: V4000_LivingRoom
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 41
-    _doright: 42
-    _doleft: 43
-    _doback: 40
-    _name: 41_LivingRoom_Sopa
+    _triggerListener: {fileID: 0}
+  - _index: 4100
+    _doright: 4200
+    _doleft: 4300
+    _doback: 4000
+    _name: V4100_LivingRoom_Sopa
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 42
-    _doright: 43
-    _doleft: 41
-    _doback: 40
-    _name: 42_LivingRoom_Rug
+    _triggerListener: {fileID: 0}
+  - _index: 4200
+    _doright: 4300
+    _doleft: 4100
+    _doback: 4000
+    _name: V4200_LivingRoom_Rug
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 43
-    _doright: 41
-    _doleft: 42
-    _doback: 40
-    _name: 43_LivingRoom_TV
+    _triggerListener: {fileID: 0}
+  - _index: 4300
+    _doright: 4100
+    _doleft: 4200
+    _doback: 4000
+    _name: V4300_LivingRoom_TV
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 50
+    _triggerListener: {fileID: 0}
+  - _index: 5000
     _doright: 0
     _doleft: 0
-    _doback: 20
-    _name: 50_Toilet
+    _doback: 2000
+    _name: V5000_Toilet
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 51
-    _doright: 52
-    _doleft: 52
-    _doback: 50
-    _name: 51_Toilet_Mirror
+    _triggerListener: {fileID: 0}
+  - _index: 5100
+    _doright: 5200
+    _doleft: 5200
+    _doback: 5000
+    _name: V5100_Toilet_Mirror
     _cam: {fileID: 0}
     _ui: {fileID: 0}
-  - _index: 52
-    _doright: 51
-    _doleft: 51
-    _doback: 50
-    _name: 52_Toilet_Sink
+    _triggerListener: {fileID: 0}
+  - _index: 5200
+    _doright: 5100
+    _doleft: 5100
+    _doback: 5000
+    _name: V5200_Toilet_Sink
     _cam: {fileID: 0}
     _ui: {fileID: 0}
+    _triggerListener: {fileID: 0}
   Cameras: {fileID: 683075767}
   UIs: {fileID: 53074165}
+  Triggers: {fileID: 252297285}
 --- !u!4 &1204330300
 Transform:
   m_ObjectHideFlags: 0
@@ -11143,7 +11328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 51
+  NextInt: 5100
 --- !u!114 &1214163219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11229,80 +11414,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1214163216}
---- !u!1 &1214904819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1214904820}
-  - component: {fileID: 1214904822}
-  - component: {fileID: 1214904821}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1214904820
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214904819}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 425404307}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1214904821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214904819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Button
---- !u!222 &1214904822
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214904819}
 --- !u!1 &1224381204
 GameObject:
   m_ObjectHideFlags: 0
@@ -11872,6 +11983,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4946862992927974, guid: 6e1e9c3becff45549bc7aaf478874b4d,
     type: 2}
   m_PrefabInternal: {fileID: 1277526738}
+--- !u!1 &1288087220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1288087221}
+  m_Layer: 0
+  m_Name: V5200_Toilet_Sink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1288087221
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288087220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1307170186
 Prefab:
   m_ObjectHideFlags: 0
@@ -12003,7 +12142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 12
+  NextInt: 1200
 --- !u!114 &1312149368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12138,7 +12277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 22
+  NextInt: 2200
 --- !u!114 &1330041072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12560,7 +12699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 31
+  NextInt: 3100
 --- !u!114 &1347304096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12646,6 +12785,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347304093}
+--- !u!1 &1350370832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1350370833}
+  m_Layer: 0
+  m_Name: V5100_Toilet_Mirror
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1350370833
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350370832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1351625596
 Prefab:
   m_ObjectHideFlags: 0
@@ -12697,6 +12864,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4928082352223508, guid: 96f78066a2089264085ad3502b345555,
     type: 2}
   m_PrefabInternal: {fileID: 1351625596}
+--- !u!1 &1352407265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1352407266}
+  m_Layer: 0
+  m_Name: V4300_LivingRoom_TV
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1352407266
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352407265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1353052072 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4635908456063474, guid: 6ee0769bd911abd4aad799c0b81cab00,
@@ -13169,7 +13364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408858898}
   m_Layer: 5
-  m_Name: 33_Kitchen_Refri
+  m_Name: V3300_Kitchen_Refri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13310,7 +13505,7 @@ GameObject:
   - component: {fileID: 1432783298}
   - component: {fileID: 1432783297}
   m_Layer: 0
-  m_Name: 20_DressRoom
+  m_Name: V2000_DressRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13534,6 +13729,34 @@ Transform:
   - {fileID: 1343416940}
   m_Father: {fileID: 1959322744}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1463342406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1463342407}
+  m_Layer: 0
+  m_Name: V3100_Kitchen_Sink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1463342407
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1463342406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1468260431
 GameObject:
@@ -13810,6 +14033,34 @@ Transform:
   m_Children:
   - {fileID: 1250265816}
   m_Father: {fileID: 1443669080}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1503467258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1503467259}
+  m_Layer: 0
+  m_Name: V1000_BedRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1503467259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503467258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508456550
@@ -14411,7 +14662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 41
+  NextInt: 4100
 --- !u!114 &1576658470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14497,6 +14748,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1576658467}
+--- !u!1 &1604090696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1604090697}
+  m_Layer: 0
+  m_Name: V3200_Kitchen_Table
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1604090697
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1604090696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1607449428 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4722245764040526, guid: 0d9eb53229fd4e4428e17f457310aada,
@@ -14576,6 +14855,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1612150915}
+--- !u!1 &1615760481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1615760482}
+  m_Layer: 0
+  m_Name: V1300_BedRoom_Desk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1615760482
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1615760481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616041232
 GameObject:
   m_ObjectHideFlags: 0
@@ -14662,7 +14969,7 @@ GameObject:
   - component: {fileID: 1617639902}
   - component: {fileID: 1617639901}
   m_Layer: 0
-  m_Name: 12_BedRoom_Bed
+  m_Name: V1200_BedRoom_Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14805,7 +15112,7 @@ GameObject:
   - component: {fileID: 1640938103}
   - component: {fileID: 1640938102}
   m_Layer: 0
-  m_Name: 42_LivingRoom_Rug
+  m_Name: V4200_LivingRoom_Rug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14914,10 +15221,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1669856664}
-  - component: {fileID: 1669856665}
-  - component: {fileID: 1669856666}
   m_Layer: 5
-  m_Name: 10_BedRoom
+  m_Name: V1000_BedRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14944,74 +15249,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1669856665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1669856663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9309e7ecff59a4a926e93767309d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsReady: 0
-  Triggers:
-  - index: 
-    desc: 
-    IsValid: 0
-    IsTriggerd: 0
-    IsShowButton: 0
-    Show_Button: []
-    IsHideButton: 0
-    Hide_Button: []
-    IsShowTrigger: 0
-    Show_TriggerName: []
-    IsHideTrigger: 0
-    Hide_TriggerName: []
-    IsShowObject: 0
-    Show_Object: []
-    IsHideObject: 0
-    Hide_Object: []
-    IsPlayMotion: 0
-    Play_Motion: {fileID: 0}
-    IsPlaySound: 0
-    Play_Sound: 
-    IsPlayEffect: 0
-    Play_Effect: 
-    IsSendTrigger: 0
-    Send_TriggerName: 
---- !u!114 &1669856666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1669856663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6b84ed8ab84d546b93c9e932f34cd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 
-  desc: 
-  IsValid: 0
-  IsTriggerd: 0
-  ShowButton: 0
-  Show_Button: []
-  HideButton: 0
-  Hide_Button: []
-  ShowTrigger: 0
-  Show_TriggerName: []
-  HideTrigger: 0
-  Hide_TriggerName: []
-  PlayMotion: 0
-  Play_Motion: {fileID: 0}
-  PlaySound: 0
-  Play_Sound: 
-  PlayEffect: 0
-  Play_Effect: 
-  SendTrigger: 0
-  Send_TriggerName: 
 --- !u!1001 &1679960396
 Prefab:
   m_ObjectHideFlags: 0
@@ -15453,7 +15690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1696270175}
   m_Layer: 5
-  m_Name: 42_LivingRoom_Rug
+  m_Name: V4200_LivingRoom_Rug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15508,6 +15745,34 @@ Transform:
   m_Father: {fileID: 1965258091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1701496806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1701496807}
+  m_Layer: 0
+  m_Name: V2000_DressRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1701496807
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701496806}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1707875871
 GameObject:
   m_ObjectHideFlags: 0
@@ -15557,7 +15822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 50
+  NextInt: 5000
 --- !u!114 &1707875874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15685,7 +15950,7 @@ GameObject:
   - component: {fileID: 1729870733}
   - component: {fileID: 1729870732}
   m_Layer: 0
-  m_Name: 30_Kitchen
+  m_Name: V3000_Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16081,7 +16346,7 @@ GameObject:
   - component: {fileID: 1771510949}
   - component: {fileID: 1771510948}
   m_Layer: 0
-  m_Name: 31_Kitchen_Sink
+  m_Name: V3100_Kitchen_Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16241,6 +16506,34 @@ Transform:
   - {fileID: 339980666}
   m_Father: {fileID: 537716186}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1786493348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1786493349}
+  m_Layer: 0
+  m_Name: V1100_BedRoom_Shelves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1786493349
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786493348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787354211
 GameObject:
@@ -16485,7 +16778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1811996698}
   m_Layer: 5
-  m_Name: 23_DressRoom_Door
+  m_Name: V2300_DressRoom_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16723,6 +17016,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1831478531}
   m_Mesh: {fileID: 4300000, guid: 1996b3dd47892e1498b3ec10ca2a12e2, type: 3}
+--- !u!1 &1832846179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1832846181}
+  - component: {fileID: 1832846180}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1832846180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832846179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3b6b76f4570b14ab4675e6fc9190b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1832846181
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832846179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.9368305, y: 4.9970045, z: -18.91153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835149938
 GameObject:
   m_ObjectHideFlags: 0
@@ -16735,7 +17075,7 @@ GameObject:
   - component: {fileID: 1835149941}
   - component: {fileID: 1835149940}
   m_Layer: 0
-  m_Name: 11_BedRoom_Shelves
+  m_Name: V1100_BedRoom_Shelves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16964,7 +17304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860544456}
   m_Layer: 5
-  m_Name: 32_Kitchen_Table
+  m_Name: V3200_Kitchen_Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16988,11 +17328,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1863194135 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1743534198957006, guid: 225320064355baa409b644cf50030177,
-    type: 2}
-  m_PrefabInternal: {fileID: 919851117}
 --- !u!1 &1863903902
 GameObject:
   m_ObjectHideFlags: 0
@@ -17067,7 +17402,7 @@ GameObject:
   - component: {fileID: 1874156840}
   - component: {fileID: 1874156839}
   m_Layer: 0
-  m_Name: 21_DressRoom_Cabinet
+  m_Name: V2100_DressRoom_Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17352,6 +17687,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4409602181670132, guid: e4ce5783bc1350d41a3f600c301d2abc,
     type: 2}
   m_PrefabInternal: {fileID: 1902745382}
+--- !u!1 &1908763907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1908763908}
+  m_Layer: 0
+  m_Name: V4000_LivingRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1908763908
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908763907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 252297286}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1909764743
 Prefab:
   m_ObjectHideFlags: 0
@@ -17852,7 +18215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958296685}
   m_Layer: 5
-  m_Name: 30_Kitchen
+  m_Name: V3000_Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18061,7 +18424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a771b10771005d840ab02894ab812662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextInt: 43
+  NextInt: 4300
 --- !u!114 &1972584393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18156,7 +18519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1974144919}
   m_Layer: 5
-  m_Name: 13_BedRoom_Desk
+  m_Name: V1300_BedRoom_Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18312,7 +18675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1991244856}
   m_Layer: 5
-  m_Name: 40_LivingRoom
+  m_Name: V4000_LivingRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18558,7 +18921,7 @@ GameObject:
   - component: {fileID: 2037583102}
   - component: {fileID: 2037583101}
   m_Layer: 0
-  m_Name: 22_DressRoom_Laundry
+  m_Name: V2200_DressRoom_Laundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18795,7 +19158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105420209}
   m_Layer: 5
-  m_Name: 31_Kitchen_Sink
+  m_Name: V3100_Kitchen_Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18898,7 +19261,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2126173910}
-  - component: {fileID: 2126173911}
   m_Layer: 0
   m_Name: BedRoom
   m_TagString: Untagged
@@ -18934,68 +19296,6 @@ Transform:
   m_Father: {fileID: 796361857}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2126173911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2126173909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9309e7ecff59a4a926e93767309d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsReady: 0
-  Triggers:
-  - index: T0001
-    desc: 
-    IsValid: 0
-    IsTriggerd: 0
-    IsShowButton: 0
-    Show_Button: []
-    IsHideButton: 0
-    Hide_Button: []
-    IsShowTrigger: 0
-    Show_TriggerName: []
-    IsHideTrigger: 0
-    Hide_TriggerName: []
-    IsShowObject: 0
-    Show_Object: []
-    IsHideObject: 0
-    Hide_Object: []
-    IsPlayMotion: 0
-    Play_Motion: {fileID: 0}
-    IsPlaySound: 0
-    Play_Sound: 
-    IsPlayEffect: 0
-    Play_Effect: 
-    IsSendTrigger: 1
-    Send_TriggerName: T0002
-  - index: T0002
-    desc: 
-    IsValid: 0
-    IsTriggerd: 0
-    IsShowButton: 0
-    Show_Button: []
-    IsHideButton: 0
-    Hide_Button: []
-    IsShowTrigger: 0
-    Show_TriggerName: []
-    IsHideTrigger: 0
-    Hide_TriggerName: []
-    IsShowObject: 0
-    Show_Object: []
-    IsHideObject: 1
-    Hide_Object:
-    - {fileID: 1863194135}
-    IsPlayMotion: 0
-    Play_Motion: {fileID: 0}
-    IsPlaySound: 0
-    Play_Sound: 
-    IsPlayEffect: 0
-    Play_Effect: 
-    IsSendTrigger: 0
-    Send_TriggerName: 
 --- !u!1 &2126669924
 GameObject:
   m_ObjectHideFlags: 0
@@ -19038,7 +19338,7 @@ GameObject:
   - component: {fileID: 2136455536}
   - component: {fileID: 2136455535}
   m_Layer: 0
-  m_Name: 50_Toilet
+  m_Name: V5000_Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

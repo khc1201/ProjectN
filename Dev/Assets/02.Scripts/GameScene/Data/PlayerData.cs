@@ -14,7 +14,7 @@ public class PlayData
     #endregion
 
     #region NowPlay
-    public int NowView = 10; // default
+    public int NowView = 1000; // default
     public bool[] IsTriggered;
     public int nowClick = 0;
     public int lowestClick = 0;

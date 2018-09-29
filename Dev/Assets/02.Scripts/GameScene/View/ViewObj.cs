@@ -10,6 +10,7 @@ public class ViewObj
     public string _name;
     public GameObject _cam;
     public GameObject _ui;
+    public GameObject _triggerListener;
 
     public void DoHide()
     {

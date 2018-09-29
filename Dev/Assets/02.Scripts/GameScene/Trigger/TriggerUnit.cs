@@ -7,8 +7,9 @@ public class TriggerUnit
 {
     #region 기본 영역
     public string index;
+    public TRIGGER_STEP step; //로딩에서 필요한 스텝 (로딩 순서)
     public string desc;
-    public bool IsValid = false; // 로딩 영역에서 다루는 인수
+    public bool IsValid = true; // 로딩 영역에서 다루는 인수
     public bool IsTriggerd = false; // 로딩 영역에서 다루는 인수
     #endregion
 
@@ -25,9 +26,9 @@ public class TriggerUnit
     public bool IsHideObject;
     public GameObject[] Hide_Object;
     public bool IsPlayMotion;
-    public MotionTrigger Play_Motion;
+    public string Play_MotionName;
     public bool IsPlaySound;
-    public string Play_Sound;
+    public string Play_SoundName;
     public bool IsPlayEffect;
     public string Play_Effect;
     public bool IsSendTrigger;
