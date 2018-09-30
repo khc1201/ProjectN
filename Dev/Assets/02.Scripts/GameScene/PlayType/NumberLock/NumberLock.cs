@@ -12,6 +12,10 @@ public class NumberLock : MonoBehaviour
     public List<NumberImage> numberImages;
     public string rightValue;
     public string nowValue;
+    public void OnEnable()
+    {
+        ResetValue();
+    }
     public void Start()
     {
         if(rightValue == null)
@@ -23,12 +27,14 @@ public class NumberLock : MonoBehaviour
         {
             e.GetMother(this);
         }
-        foreach(var e in numberTargets)
+        if (playType != PLAY_TYPE.NUMBERLOCK_CLICKER)
         {
-            e.GetMother(this);
-            e.targetIndex = numberTargets.IndexOf(e);
+            foreach (var e in numberTargets)
+            {
+                e.GetMother(this);
+                e.targetIndex = numberTargets.IndexOf(e);
+            }
         }
-
         ResetValue();
     }
     public void SetValue(string value)
@@ -52,7 +58,10 @@ public class NumberLock : MonoBehaviour
     }
     public void RefreshUI()
     {
-        foreach(var e in numberTargets)
+        if (playType == PLAY_TYPE.NUMBERLOCK_CLICKER)   return;
+        
+
+        foreach (var e in numberTargets)
         {
             char[] value = nowValue.ToCharArray();
             char thischar = value[numberTargets.IndexOf(e)];
@@ -62,6 +71,8 @@ public class NumberLock : MonoBehaviour
     public void ResetValue()
     {
         nowValue = "";
+        if (playType == PLAY_TYPE.NUMBERLOCK_CLICKER)   return;
+        
         foreach (var e in numberTargets)
         {
             e.ClearValue();
