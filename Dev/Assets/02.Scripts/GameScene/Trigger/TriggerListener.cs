@@ -11,6 +11,7 @@ public class TriggerListener : MonoBehaviour, IListener {
         csEventManager.Instance.AddListener(EVENT_TYPE.SEND_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.HIDE_TRIGGER, this);
+        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_TRIGGER, this);
     }
 
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
@@ -30,15 +31,24 @@ public class TriggerListener : MonoBehaviour, IListener {
                 }
             case EVENT_TYPE.SHOW_TRIGGER:
                 {
-                    ShowTrigger(param as string);
+                    ShowTrigger(param.ToString());
                     break;
                 }
             case EVENT_TYPE.HIDE_TRIGGER:
                 {
-                    HideTrigger(param as string);
+                    HideTrigger(param.ToString());
+                    break;
+                }
+            case EVENT_TYPE.INIT_TRIGGER:
+                {
+                    InitTrigger(param.ToString());
                     break;
                 }
         }
+    }
+    public void InitTrigger(string idx)
+    {
+        StartTrigger(idx, true);
     }
     public void ShowTrigger(string idx)
     {
@@ -51,17 +61,24 @@ public class TriggerListener : MonoBehaviour, IListener {
         if(target.IsValid) target.IsValid = false;
     }
 
-    public void StartTrigger(string idx)
+    public void StartTrigger(string idx, bool isInit = false)
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
         if(target == null)
         {
             return;
         }
+        if (isInit)
+        {
+            target.IsTriggered = true;
+        }
         if (target.IsTriggered==false)
         {
-            PlayerData.singletone.SaveTrigger(target.index);
-            target.IsTriggered = true;
+            if (!PlayerData.singletone.playData.IsTriggeredList.Contains(target.index))
+            {
+                PlayerData.singletone.SaveTrigger(target.index);
+                target.IsTriggered = true;
+            }
         }
 
         if (target.IsShowButton)    Trigger_ShowButton(target, true);
@@ -71,7 +88,7 @@ public class TriggerListener : MonoBehaviour, IListener {
         if (target.IsShowObject)    Trigger_ShowObject(target, true);
         if (target.IsHideObject)    Trigger_ShowObject(target, false);
         if (target.IsPlayMotion)    Trigger_StartMotion(target);
-        if (target.IsPlaySound && !target.IsTriggered)     Trigger_PlaySound(target.Play_SoundName);
+        if (target.IsPlaySound)     Trigger_PlaySound(target.Play_SoundName);
         if (target.IsSendTrigger)   Trigger_SendTrigger(target.Send_TriggerName); 
     }
     private void Trigger_PlaySound(string soundName)

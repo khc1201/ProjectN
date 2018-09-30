@@ -11,7 +11,7 @@ public class MotionTrigger : MonoBehaviour, IListener
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.MOTION_START, this);
-        
+        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_MOTION, this);
     }
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
@@ -22,13 +22,34 @@ public class MotionTrigger : MonoBehaviour, IListener
                 StartMotion();
             }
         }
+        else if(et == EVENT_TYPE.INIT_MOTION)
+        {
+            if (this.index == param.ToString())
+            {
+                StartMotion(true);
+            }
+        }
     }
-    public void StartMotion()
+    public void StartMotion(bool isInit = false)
     {
+        if (isInit)
+        {
+            IsTriggered = true;
+            foreach(var e in motionList)
+            {
+                e.fadeTime = 0.01f;
+                e.motionDelay = 0.01f;
+                e.moveSpeed = 0.01f;
+                e.rotateSpeed = 0.01f;
+            }
+        }
         if (!IsTriggered)
         {
-            PlayerData.singletone.SaveMotionTrigger(this.index);
-            IsTriggered = true;
+            if (!PlayerData.singletone.playData.IsMotionTriggeredList.Contains(index))
+            {
+                PlayerData.singletone.SaveMotionTrigger(this.index);
+                IsTriggered = true;
+            }
         }
         foreach (var e in motionList)
         {

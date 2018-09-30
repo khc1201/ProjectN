@@ -18,9 +18,29 @@ public class SceneData : MonoBehaviour {
     */
     #endregion
 
-    void Start () {
-		//TriggerListener 의 IsTriggered 를 대조하여 PlayerData 정보에 맞게 저장한다.
-        //
-        //TriggerListener 에게 IsTriggered 체크 된 TriggerUnit 을 실행하도록 한다.
+    void Start ()
+    {
+        StartCoroutine(LateStart());
 	}
+    public IEnumerator LateStart()
+    {
+        yield return new WaitForFixedUpdate();
+        InitTrigger();
+        InitMotionTrigger();
+        yield return null;
+    }
+    public void InitTrigger()
+    {
+        foreach (string s in PlayerData.singletone.playData.IsTriggeredList)
+        {
+            csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_TRIGGER, this, s);
+        }
+    }
+    public void InitMotionTrigger()
+    {
+        foreach(string s in PlayerData.singletone.playData.IsMotionTriggeredList)
+        {
+            csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_MOTION, this, s);
+        }
+    }
 }

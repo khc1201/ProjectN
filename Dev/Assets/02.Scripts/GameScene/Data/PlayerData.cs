@@ -75,7 +75,7 @@ public class PlayerData : MonoBehaviour, IListener
     {
         playData = new PlayData();
         string stringData = JsonWriter.Serialize(playData);
-        var sw = new StreamWriter(new FileStream(dataPath, FileMode.Create));
+        var sw = new StreamWriter(new FileStream(dataPath, FileMode.CreateNew));
         sw.WriteLine(stringData);
         sw.Close();
     }

@@ -4,6 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DebugManager : MonoBehaviour,IListener {
+    public static DebugManager singletone;
+    public void Awake()
+    {
+        if(singletone == null)
+        {
+            singletone = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            DestroyImmediate(this);
+            return;
+        }
+    }
     public void Start()
     {
         ViewDebug.SetActive(IsViewDebug);
@@ -14,7 +28,7 @@ public class DebugManager : MonoBehaviour,IListener {
     public GameObject ViewDebug;
     public Text ViewIndex;
     public Text ViewDesc;
-
+    public bool IsContinueData = false;
     public void RefreshDebug(string viewIndex, string viewDesc)
     {
         if (!IsViewDebug) return;
