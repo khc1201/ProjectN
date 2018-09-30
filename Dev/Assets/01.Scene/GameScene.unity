@@ -8818,10 +8818,9 @@ MonoBehaviour:
   IsReady: 0
   Triggers:
   - index: TEST02
-    step: 0
     desc: 
+    IsTriggered: 0
     IsValid: 1
-    IsTriggerd: 0
     IsShowButton: 0
     Show_Button: []
     IsHideButton: 0
@@ -8856,8 +8855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motionList:
-  - index: OPENDOOR
-    desc: "\uBB38\uC5F4\uB9BC1"
+  - desc: "\uBB38\uC5F4\uB9BC1"
     target: {fileID: 822492724}
     motionType: 0
     motionDelay: 0
@@ -8868,8 +8866,7 @@ MonoBehaviour:
     fadeTime: 0
     moveSpeed: 0
     movePos: {x: 0, y: 0, z: 0}
-  - index: OPENDOOR
-    desc: "\uBB38\uC5F4\uB9BC2"
+  - desc: "\uBB38\uC5F4\uB9BC2"
     target: {fileID: 457060893}
     motionType: 0
     motionDelay: 0
@@ -8881,6 +8878,7 @@ MonoBehaviour:
     moveSpeed: 0
     movePos: {x: 0, y: 0, z: 0}
   index: M0002
+  IsTriggered: 0
 --- !u!1 &804621928
 GameObject:
   m_ObjectHideFlags: 0
@@ -16975,8 +16973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motionList:
-  - index: first
-    desc: 
+  - desc: 
     target: {fileID: 999080231}
     motionType: 0
     motionDelay: 0
@@ -16988,6 +16985,7 @@ MonoBehaviour:
     moveSpeed: 0
     movePos: {x: 0, y: 0, z: 0}
   index: M0001
+  IsTriggered: 0
 --- !u!114 &1441888535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17002,10 +17000,9 @@ MonoBehaviour:
   IsReady: 1
   Triggers:
   - index: TEST01
-    step: 0
     desc: 
+    IsTriggered: 0
     IsValid: 1
-    IsTriggerd: 0
     IsShowButton: 0
     Show_Button: []
     IsHideButton: 0
@@ -19142,7 +19139,7 @@ MonoBehaviour:
   - {fileID: 864325700}
   numberTargets: []
   numberImages: []
-  rightValue: 121121
+  rightValue: 12
   nowValue: 
 --- !u!1 &1623030717
 GameObject:

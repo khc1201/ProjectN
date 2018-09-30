@@ -7,10 +7,9 @@ public class TriggerUnit
 {
     #region 기본 영역
     public string index;
-    public TRIGGER_STEP step; //로딩에서 필요한 스텝 (로딩 순서)
     public string desc;
-    public bool IsValid = true; // 로딩 영역에서 다루는 인수
-    public bool IsTriggerd = false; // 로딩 영역에서 다루는 인수
+    public bool IsTriggered = false;
+    public bool IsValid = true;
     #endregion
 
     public bool IsShowButton;

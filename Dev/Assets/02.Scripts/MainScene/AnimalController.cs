@@ -16,16 +16,11 @@ public class AnimalController : MonoBehaviour {
             animals.Add(g.transform.gameObject);
         }
 
-        //for test
-        Debug.Log("Animals Count = " + animals.Count);
-
         StartCoroutine(CoMove());
     }
     IEnumerator CoMove()
     {
         MoveAnimal();
-        //for test
-        Debug.Log("after Animals Count = " + animals.Count);
         yield return new WaitForSecondsRealtime(spawnRapid * Time.deltaTime);
         yield return StartCoroutine(CoMove());
     }

@@ -15,7 +15,8 @@ public class PlayData
 
     #region NowPlay
     public int NowView = 1000; // default
-    public bool[] IsTriggered;
+    public List<string> IsTriggeredList = new List<string>();
+    public List<string> IsMotionTriggeredList = new List<string>();
     public int nowClick = 0;
     public int lowestClick = 0;
     #endregion
@@ -26,7 +27,7 @@ public class PlayData
 }
 public class PlayerData : MonoBehaviour, IListener
 {
-    public PlayData playData = new PlayData();
+    public PlayData playData;
     public static PlayerData singletone;
     private string dataPath;
     public void Awake()
@@ -36,10 +37,12 @@ public class PlayerData : MonoBehaviour, IListener
         {
             if (File.Exists(dataPath))
             {
+                singletone = this;
                 LoadData();
             }
             else
             {
+                singletone = this;
                 CreateData();
             }
             DontDestroyOnLoad(this.gameObject);
@@ -70,6 +73,7 @@ public class PlayerData : MonoBehaviour, IListener
     }
     public void CreateData()
     {
+        playData = new PlayData();
         string stringData = JsonWriter.Serialize(playData);
         var sw = new StreamWriter(new FileStream(dataPath, FileMode.Create));
         sw.WriteLine(stringData);
@@ -88,6 +92,19 @@ public class PlayerData : MonoBehaviour, IListener
         var sw = new StreamWriter(new FileStream(dataPath, FileMode.Open));
         sw.WriteLine(stringData);
         sw.Close();
+    }
+    public void SaveTrigger(string index)
+    {
+        //for test
+        Debug.Log("playData " + playData.IsTriggeredList.Count);
+        playData.IsTriggeredList.Add(index);
+        SaveData();
+    }
+    public void SaveMotionTrigger(string index)
+    {
+        playData.IsMotionTriggeredList.Add(index);
+        //playData.IsMotionTriggeredList[playData.IsMotionTriggeredList.Length] = index;
+        SaveData();
     }
 
 }

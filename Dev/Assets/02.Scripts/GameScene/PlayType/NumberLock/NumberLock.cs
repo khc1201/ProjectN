@@ -39,17 +39,10 @@ public class NumberLock : MonoBehaviour
     }
     public void SetValue(string value)
     {
-        //for test
-        Debug.Log("SetValue ! nowValue.Length = " + nowValue.Length);
-        //for test
-        Debug.Log("SetValue ! before nowValue = " + nowValue);
-
         if (nowValue.Length < rightValue.Length)
         {
             nowValue += value;
             RefreshUI();
-            //for test
-            Debug.Log("SetValue succeed! after nowValue = " + nowValue);
         }
         if(nowValue.Length == rightValue.Length)
         {
@@ -59,8 +52,6 @@ public class NumberLock : MonoBehaviour
     public void RefreshUI()
     {
         if (playType == PLAY_TYPE.NUMBERLOCK_CLICKER)   return;
-        
-
         foreach (var e in numberTargets)
         {
             char[] value = nowValue.ToCharArray();
@@ -102,10 +93,6 @@ public class NumberLock : MonoBehaviour
     }
     public void DoComplete()
     {
-        //for test
-        Debug.Log("성공을 이곳에서 처리!");
-        //for test
-        Debug.Log("STEP1");
         this.gameObject.GetComponent<TriggerSender>().SendTrigger();
         
     }

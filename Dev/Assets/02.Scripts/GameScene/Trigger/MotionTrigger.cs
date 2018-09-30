@@ -7,6 +7,7 @@ public class MotionTrigger : MonoBehaviour, IListener
 {
     public List<MotionUnit> motionList;
     public string index;
+    public bool IsTriggered = false;
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.MOTION_START, this);
@@ -14,23 +15,22 @@ public class MotionTrigger : MonoBehaviour, IListener
     }
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
-        //for test
-        Debug.Log("STEP6-1");
         if (et == EVENT_TYPE.MOTION_START)
         {
-            //for test
-            Debug.Log("STEP6-2 param = " + param.ToString() + " / index = " + this.index);
             if (this.index == param.ToString())
             {
-                //for test
-                Debug.Log("STEP6-3");
                 StartMotion();
             }
         }
     }
     public void StartMotion()
     {
-        foreach(var e in motionList)
+        if (!IsTriggered)
+        {
+            PlayerData.singletone.SaveMotionTrigger(this.index);
+            IsTriggered = true;
+        }
+        foreach (var e in motionList)
         {
             StartCoroutine(PlayMotion(e));
         }
@@ -40,7 +40,6 @@ public class MotionTrigger : MonoBehaviour, IListener
     {
         yield return new WaitForSeconds(unit.motionDelay);
         Tween tween;
-
         switch (unit.motionType)
         {
             case MOTION_TYPE.ROTATE:

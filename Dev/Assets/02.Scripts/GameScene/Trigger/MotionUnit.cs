@@ -6,7 +6,6 @@ using UnityEngine;
 public class MotionUnit{
 
     #region MOTION_TYPE : 공통
-    public string index;
     public string desc;
 
     public GameObject target;

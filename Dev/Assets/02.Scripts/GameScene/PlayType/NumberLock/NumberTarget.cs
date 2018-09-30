@@ -19,25 +19,11 @@ public class NumberTarget : MonoBehaviour {
     }
     public void ClearValue()
     {
-        switch (mother.playType)
-        {
-            case PLAY_TYPE.NUMBERLOCK_NUMBER:
-                {
-                    numberText.text = "";
-                    break;
-                }
-        }
+        numberText.text = "";
     }
     public void ChangeValue(string value)
     {
-        switch (mother.playType)
-        {
-            case PLAY_TYPE.NUMBERLOCK_NUMBER:
-                {
-                    numberText.text = value;
-                    break;
-                }
-        }
+        numberText.text = value;
     }
     public void GetMother(NumberLock target)
     {
