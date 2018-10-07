@@ -17,6 +17,8 @@ public class PlayData
     public int NowView = 1000; // default
     public List<string> IsTriggeredList = new List<string>();
     public List<string> IsMotionTriggeredList = new List<string>();
+    public List<Item> nowHaveItem = new List<Item>();
+    public List<Item> completeHaveItem = new List<Item>();
     public int nowClick = 0;
     public int lowestClick = 0;
     #endregion
@@ -33,6 +35,15 @@ public class PlayerData : MonoBehaviour, IListener
     public void Awake()
     {
         dataPath = Application.persistentDataPath + "/playerData.json";
+        /*
+        if (!(File.Exists(Application.persistentDataPath)))
+        {
+            File.Create(Application.persistentDataPath);
+            Directory.CreateDirectory(Path.GetDirectoryName(Application.persistentDataPath));
+            //for test
+            Debug.Log("Directory Created");
+        }
+        */
         if (singletone == null)
         {
             if (File.Exists(dataPath))
@@ -69,11 +80,13 @@ public class PlayerData : MonoBehaviour, IListener
     {
         yield return new WaitForFixedUpdate();
         csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_PLAYERDATA, this, playData);
+        TestGetItem();
         yield return null;
     }
     public void CreateData()
     {
         playData = new PlayData();
+
         string stringData = JsonWriter.Serialize(playData);
         var sw = new StreamWriter(new FileStream(dataPath, FileMode.CreateNew));
         sw.WriteLine(stringData);
@@ -99,12 +112,27 @@ public class PlayerData : MonoBehaviour, IListener
         Debug.Log("playData " + playData.IsTriggeredList.Count);
         playData.IsTriggeredList.Add(index);
         SaveData();
+        
     }
     public void SaveMotionTrigger(string index)
     {
         playData.IsMotionTriggeredList.Add(index);
         //playData.IsMotionTriggeredList[playData.IsMotionTriggeredList.Length] = index;
         SaveData();
+    }
+
+    public void TestGetItem()
+    {
+        AddItem(new Item("name", "index", "icon"));
+    }
+    public void AddItem(Item target)
+    {
+        playData.nowHaveItem.Add(target);
+        SaveData();
+    }
+    public void RemoveItem(Item item)
+    {
+        playData.nowHaveItem.Remove(playData.nowHaveItem.Find(x => x == item));
     }
 
 }

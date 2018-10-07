@@ -5,7 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class ClickAndMove : MonoBehaviour {
+public class ClickAndMove : MonoBehaviour
+{
     public GameObject targetObj;
     private Button buttonUI;
     public List<Button> otherButtonUI;
@@ -16,6 +17,7 @@ public class ClickAndMove : MonoBehaviour {
     public float moveY;
     public bool IsUsed = false;
     private Tween tween;
+
     public void OnEnable()
     {
         IsUsed = false;
@@ -42,7 +44,6 @@ public class ClickAndMove : MonoBehaviour {
     public void OnMove()
     {
         buttonUI.enabled = false;
-         
     }
     public void EndMove()
     {
