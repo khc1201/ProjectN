@@ -17,8 +17,8 @@ public class PlayData
     public int NowView = 1000; // default
     public List<string> IsTriggeredList = new List<string>();
     public List<string> IsMotionTriggeredList = new List<string>();
-    public List<Item> nowHaveItem = new List<Item>();
-    public List<Item> completeHaveItem = new List<Item>();
+    public ArrayList nowHaveItem = new ArrayList();
+    public ArrayList completeHaveItem = new ArrayList();
     public int nowClick = 0;
     public int lowestClick = 0;
     #endregion
@@ -32,9 +32,11 @@ public class PlayerData : MonoBehaviour, IListener
     public PlayData playData;
     public static PlayerData singletone;
     private string dataPath;
+    //private string itemdataPath;
     public void Awake()
     {
         dataPath = Application.persistentDataPath + "/playerData.json";
+        //itemdataPath = Application.persistentDataPath + "/itemData.json";
         /*
         if (!(File.Exists(Application.persistentDataPath)))
         {
@@ -132,7 +134,15 @@ public class PlayerData : MonoBehaviour, IListener
     }
     public void RemoveItem(Item item)
     {
-        playData.nowHaveItem.Remove(playData.nowHaveItem.Find(x => x == item));
+        //playData.nowHaveItem.Remove(playData.nowHaveItem.Find(x => x == item));
+        foreach(Item e in playData.nowHaveItem)
+        {
+            if(e.Name == item.Name)
+            {
+                playData.nowHaveItem.Remove(e);
+            }
+        }
+        SaveData();
     }
 
 }

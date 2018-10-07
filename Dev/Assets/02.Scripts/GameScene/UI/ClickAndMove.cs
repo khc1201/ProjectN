@@ -28,6 +28,7 @@ public class ClickAndMove : MonoBehaviour
     }
     public void OnDisable()
     {
+        tween.Pause();
         buttonUI.transform.localPosition = buttonInitPos;
         targetObj.transform.localPosition = initPos;
         IsUsed = false;
