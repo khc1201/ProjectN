@@ -9,7 +9,8 @@
     MOTION_START,
     INIT_TRIGGER,
     INIT_MOTION,
-    GET_ITEM
+    GET_ITEM,
+    SELECT_ITEM
 };
 public enum TRIGGER_STEP
 {

@@ -19,6 +19,7 @@ public class PlayData
     public List<string> IsMotionTriggeredList = new List<string>();
     public ArrayList nowHaveItem = new ArrayList();
     public ArrayList completeHaveItem = new ArrayList();
+    public int nowItem = 1;
     public int nowClick = 0;
     public int lowestClick = 0;
     #endregion
@@ -70,6 +71,8 @@ public class PlayerData : MonoBehaviour, IListener
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_HUD, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.GET_ITEM, this);
+        csEventManager.Instance.AddListener(EVENT_TYPE.SELECT_ITEM, this);
+
         StartCoroutine(LateStart());
     }
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
@@ -87,6 +90,11 @@ public class PlayerData : MonoBehaviour, IListener
                 return;
             }
             AddItem(temp);
+        }
+        else if(et == EVENT_TYPE.SELECT_ITEM)
+        {
+            playData.nowItem = (int)param;
+            ItemList.singletone.RefeshNowSelection();
         }
     }
     public IEnumerator LateStart()
@@ -155,6 +163,10 @@ public class PlayerData : MonoBehaviour, IListener
             }
         }
         SaveData();
+    }
+    public void SelectItem(int num)
+    {
+        this.playData.nowItem = num;
     }
 
 }
