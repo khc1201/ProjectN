@@ -7,10 +7,10 @@ public class Item : MonoBehaviour
 {
     public string Name;
     public string Index;
-    public Sprite Icon;
+    public string Icon;
     
     public Item(string _name, string _index, string _icon)
     {
-        Name = _name; Index = _index;
+        Name = _name; Index = _index; Icon = _icon;
     }
 }

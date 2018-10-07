@@ -8,7 +8,8 @@
     HIDE_TRIGGER,
     MOTION_START,
     INIT_TRIGGER,
-    INIT_MOTION
+    INIT_MOTION,
+    GET_ITEM
 };
 public enum TRIGGER_STEP
 {

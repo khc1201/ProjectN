@@ -69,6 +69,7 @@ public class PlayerData : MonoBehaviour, IListener
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_HUD, this);
+        csEventManager.Instance.AddListener(EVENT_TYPE.GET_ITEM, this);
         StartCoroutine(LateStart());
     }
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
@@ -77,12 +78,21 @@ public class PlayerData : MonoBehaviour, IListener
         {
             playData.NowView = (param as ViewObj)._index;
         }
+        else if(et == EVENT_TYPE.GET_ITEM)
+        {
+            Item temp = param as Item;
+            if(temp == null)
+            {
+                Debug.LogError("AddItem 에서 param 의 인수 전달이 제대로 되지 않았습니다");
+                return;
+            }
+            AddItem(temp);
+        }
     }
     public IEnumerator LateStart()
     {
         yield return new WaitForFixedUpdate();
         csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_PLAYERDATA, this, playData);
-        TestGetItem();
         yield return null;
     }
     public void CreateData()
@@ -129,6 +139,8 @@ public class PlayerData : MonoBehaviour, IListener
     }
     public void AddItem(Item target)
     {
+        //for test
+        Debug.Log(target.Name);
         playData.nowHaveItem.Add(target);
         SaveData();
     }

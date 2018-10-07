@@ -1,0 +1,10 @@
+How to use IconGenerator asset
+
+-> VIDEO TUTORIAL: https://www.youtube.com/watch?v=KkjPPeyaxkI
+
+1) Open IconGenerator - scene
+2) Drag your prefab into "IconGenerator" GameObject's "Targets" section.
+3) Select "Use Prefab Names" OR enter a custom name into "File Names" section.
+4) OPTIONAL: Set custom folder for icons. Default location is Assets folder. If you type in "Icons", it will save into "Assets/Icons"!
+5) Play the scene, you should see icons of the prefabs you created on-screen.
+6) Icons are generated into .PNG files inside your specified folder!
