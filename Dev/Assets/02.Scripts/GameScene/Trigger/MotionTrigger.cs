@@ -3,38 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class MotionTrigger : MonoBehaviour, IListener
+public class MotionTrigger : InitObject, IListener
 {
     public List<MotionUnit> motionList;
-    public string index;
-    public bool IsTriggered = false;
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.MOTION_START, this);
-        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_MOTION, this);
+        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
+
+        //for test
+        base.SaveValue();
     }
-    public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
+    public override void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
         if (et == EVENT_TYPE.MOTION_START)
         {
-            if (this.index == param.ToString())
+            if(this.OnLoadValue == false)
+            {
+                Debug.LogError("OnLoadValue 가 false 입니다." + this.gameObject.name);
+                return;
+            }
+            if (this.Index == param.ToString())
             {
                 StartMotion();
             }
         }
-        else if(et == EVENT_TYPE.INIT_MOTION)
+        else if(et == EVENT_TYPE.INIT_OBJECT)
         {
-            if (this.index == param.ToString())
-            {
-                StartMotion(true);
-            }
+            base.LoadValue();
         }
+
     }
     public void StartMotion(bool isInit = false)
     {
         if (isInit)
         {
-            IsTriggered = true;
+            //IsTriggered = true;
+            OnLoadValue = true;
+            SaveValue();
             foreach(var e in motionList)
             {
                 e.fadeTime = 0.01f;
@@ -43,14 +49,16 @@ public class MotionTrigger : MonoBehaviour, IListener
                 e.rotateSpeed = 0.01f;
             }
         }
+        /*
         if (!IsTriggered)
         {
-            if (!PlayerData.singletone.playData.IsMotionTriggeredList.Contains(index))
+            if (!PlayerData.singletone.playData.IsMotionTriggeredList.Contains(Index))
             {
-                PlayerData.singletone.SaveMotionTrigger(this.index);
+                PlayerData.singletone.SaveMotionTrigger(this.Index);
                 IsTriggered = true;
             }
         }
+        */
         foreach (var e in motionList)
         {
             StartCoroutine(PlayMotion(e));

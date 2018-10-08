@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerListener : MonoBehaviour, IListener {
+public class TriggerListener : InitObject, IListener {
     public bool IsReady;
     public List<TriggerUnit> Triggers;
-
+    
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.SEND_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.HIDE_TRIGGER, this);
-        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_TRIGGER, this);
+        //csEventManager.Instance.AddListener(EVENT_TYPE.INIT_TRIGGER, this);
+        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
+
+        //for test
+        base.SaveValue();
     }
 
-    public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
+    public override void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
-        /*
-        if (param == null)
-        {
-            Debug.LogError(string.Format("null param : {0} 이 전달받은 트리거의 인덱스가 없습니다. 신호자 : {1}", this.name, sender.name));
-            return;
-        }*/
         switch (et)
         {
             case EVENT_TYPE.SEND_TRIGGER:
@@ -39,9 +37,10 @@ public class TriggerListener : MonoBehaviour, IListener {
                     HideTrigger(param.ToString());
                     break;
                 }
-            case EVENT_TYPE.INIT_TRIGGER:
+                
+            case EVENT_TYPE.INIT_OBJECT:
                 {
-                    InitTrigger(param.ToString());
+                    base.LoadValue();
                     break;
                 }
         }
@@ -72,6 +71,7 @@ public class TriggerListener : MonoBehaviour, IListener {
         {
             target.IsTriggered = true;
         }
+        /*
         if (target.IsTriggered==false)
         {
             if (!PlayerData.singletone.playData.IsTriggeredList.Contains(target.index))
@@ -80,7 +80,7 @@ public class TriggerListener : MonoBehaviour, IListener {
                 target.IsTriggered = true;
             }
         }
-
+        */
         if (target.IsShowButton)    Trigger_ShowButton(target, true);
         if (target.IsHideButton)    Trigger_ShowButton(target, false);
         if (target.IsShowTrigger)   Trigger_ShowTrigger(target, true);

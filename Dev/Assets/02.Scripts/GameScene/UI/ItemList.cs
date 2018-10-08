@@ -33,19 +33,19 @@ public class ItemList : MonoBehaviour, IListener
             itemButton.Add(e.GetComponentInChildren<Button>());
         }
 
-        RefeshItem();
-        RefeshNowSelection();
+        //RefeshItem();
+        //RefeshNowSelection();
     }
     public void RefeshItem()
     {
         for(int i = 0; i < itemList.Count; i++)
         {
-            itemImage[i] = GetIcon(PlayerData.singletone.playData.nowHaveItem[i] as Item);
+            itemImage[i] = GetIcon(PlayerData.singletone.playData.nowHaveItem[i]);
         }
     }
-    private Image GetIcon(Item target)
+    private Image GetIcon(string target)
     {
-        return Resources.Load("ItemIcon/" + target.Index + ".png") as Image;
+        return Resources.Load("ItemIcon/" + target + ".png") as Image;
     }
     public void RefeshNowSelection()
     {

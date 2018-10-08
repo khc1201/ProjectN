@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneData : MonoBehaviour {
+public class SceneData : MonoBehaviour, IListener {
 
     #region : SceneData 의 구성
     /*
@@ -20,15 +20,16 @@ public class SceneData : MonoBehaviour {
 
     void Start ()
     {
-        StartCoroutine(LateStart());
+        csEventManager.Instance.AddListener(EVENT_TYPE.INIT_PLAYERDATA, this);
 	}
-    public IEnumerator LateStart()
+    public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
-        yield return new WaitForFixedUpdate();
-        InitTrigger();
-        InitMotionTrigger();
-        yield return null;
+        if(et == EVENT_TYPE.INIT_PLAYERDATA)
+        {   
+            csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_OBJECT, this, (PlayData)param);
+        }
     }
+    /*
     public void InitTrigger()
     {
         foreach (string s in PlayerData.singletone.playData.IsTriggeredList)
@@ -43,4 +44,5 @@ public class SceneData : MonoBehaviour {
             csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_MOTION, this, s);
         }
     }
+    */
 }
