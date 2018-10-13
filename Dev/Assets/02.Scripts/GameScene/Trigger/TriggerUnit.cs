@@ -32,5 +32,8 @@ public class TriggerUnit
     public string Play_Effect;
     public bool IsSendTrigger;
     public string Send_TriggerName;
+    public bool IsGetItem;
+    public ItemObject itemObject;
+    public ButtonObject buttonObject;
 
 }

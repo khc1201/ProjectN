@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ItemButton : MonoBehaviour {
     public Button thisButton;
-    public int thisnum;
     public void Start()
     {
         thisButton = this.GetComponent<Button>();
@@ -14,8 +13,8 @@ public class ItemButton : MonoBehaviour {
     }
     public void OnSelect()
     {
-        //PlayerData.singletone.playData.nowClick = thisnum;
-        csEventManager.Instance.PostNotification(EVENT_TYPE.SELECT_ITEM, this, thisnum);
-        //this.transform.parent.gameObject.GetComponent<ItemList>().RefeshNowSelection();
+        this.transform.parent.GetComponent<InventorySlot>().SelectThis();
+        //for test
+        //Debug.Log("OnSelect 발생");
     }
 }

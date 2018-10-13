@@ -41,6 +41,7 @@ public class TriggerListener : InitObject, IListener {
             case EVENT_TYPE.INIT_OBJECT:
                 {
                     base.LoadValue();
+                    
                     break;
                 }
         }
@@ -89,7 +90,13 @@ public class TriggerListener : InitObject, IListener {
         if (target.IsHideObject)    Trigger_ShowObject(target, false);
         if (target.IsPlayMotion)    Trigger_StartMotion(target);
         if (target.IsPlaySound)     Trigger_PlaySound(target.Play_SoundName);
-        if (target.IsSendTrigger)   Trigger_SendTrigger(target.Send_TriggerName); 
+        if (target.IsSendTrigger)   Trigger_SendTrigger(target.Send_TriggerName);
+        if (target.IsGetItem) Trigger_GetItem(target);
+    }
+    public void Trigger_GetItem(TriggerUnit target)
+    {
+        target.itemObject.ClickAndHide();
+        target.buttonObject.HideButton();
     }
     private void Trigger_PlaySound(string soundName)
     {
@@ -112,9 +119,19 @@ public class TriggerListener : InitObject, IListener {
 
     private void Trigger_ShowButton(TriggerUnit target, bool isShow)
     {
-        foreach (var e in target.Show_Button)
+        if (isShow)
         {
-            e.SetActive(isShow);
+            foreach (var e in target.Show_Button)
+            {
+                e.GetComponent<ButtonObject>().ShowButton();
+            }
+        }
+        else if (!isShow)
+        {
+            foreach(var e in target.Hide_Button)
+            {
+                e.GetComponent<ButtonObject>().HideButton();
+            }
         }
     }
 

@@ -15,11 +15,7 @@ public class PlayData
 
     #region NowPlay
     public int NowView = 1000;
-    [SerializeField]
     public List<string> nowHaveItem = new List<string>();
-    [SerializeField]
-    public List<string> completeHaveItem = new List<string>();
-    public int nowItem = 1;
     public int nowClick = 0;
     public int lowestClick = 0;
     #endregion
@@ -74,8 +70,6 @@ public class PlayerData : MonoBehaviour, IListener
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_HUD, this);
-        csEventManager.Instance.AddListener(EVENT_TYPE.GET_ITEM, this);
-        csEventManager.Instance.AddListener(EVENT_TYPE.SELECT_ITEM, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.SAVE_OBJECT, this);
         StartCoroutine(LateStart());
     }
@@ -88,7 +82,7 @@ public class PlayerData : MonoBehaviour, IListener
                     playData.NowView = (param as ViewObj)._index;
                     break;
                 }
-
+                /*
             case EVENT_TYPE.GET_ITEM:
                 {
                     Item temp = param as Item;
@@ -100,20 +94,17 @@ public class PlayerData : MonoBehaviour, IListener
                     AddItem(temp);
                     break;
                 }
-
+                /*
             case EVENT_TYPE.SELECT_ITEM:
                 {
                     playData.nowItem = (int)param;
                     ItemList.singletone.RefeshNowSelection();
                     break;
-                }
+                }*/
 
             case EVENT_TYPE.SAVE_OBJECT:
                 {
-                    //InitObject temp = (InitObject)param as InitObject;
                     SimpleInit temp = (SimpleInit)param;
-                    //for test
-                    Debug.Log(temp._index + "/ 그리고 /" + temp._onloadvalue);
                     SaveInitData(temp._index, temp._onloadvalue);
                     break;  
                 }
@@ -121,6 +112,9 @@ public class PlayerData : MonoBehaviour, IListener
     }
     public IEnumerator LateStart()
     {
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
         csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_PLAYERDATA, this, playData);
         yield return null;
@@ -147,7 +141,6 @@ public class PlayerData : MonoBehaviour, IListener
         string stringData = sr.ReadToEnd();
         sr.Close();
         playData = JsonReader.Deserialize<PlayData>(stringData);
-
     }
     public void LoadInitData()
     {
@@ -163,7 +156,7 @@ public class PlayerData : MonoBehaviour, IListener
         sw.WriteLine(stringData);
         sw.Close();
     }
-    public void SaveInitData(string Index, bool OnLoadValue = false)
+    public void SaveInitData(string Index, bool OnLoadValue)
     {
         if (initData.ContainsKey(Index))
         {
@@ -175,17 +168,27 @@ public class PlayerData : MonoBehaviour, IListener
         }
 
         string stringData = JsonWriter.Serialize(initData);
+        //for test
+        Debug.Log(stringData);
         var sw = new StreamWriter(new FileStream(initdataPath, FileMode.Open));
         sw.WriteLine(stringData);
         sw.Close();
     }
-    public void AddItem(Item target)
+    public void AddItem(List<string> myInven)
     {
-        playData.nowHaveItem.Add(target.Index);
+        //playData.nowHaveItem = null;
+        //playData.nowHaveItem = myInven;
+        playData.nowHaveItem = myInven;
         SaveData();
     }
     public void RemoveItem(Item item)
     {
+        if (playData.nowHaveItem.Contains(item.Index))
+        {
+            playData.nowHaveItem.Remove(item.Index);
+        }
+        
+        /*
         foreach(var e in playData.nowHaveItem)
         {
             if(e == item.Index)
@@ -193,11 +196,8 @@ public class PlayerData : MonoBehaviour, IListener
                 playData.nowHaveItem.Remove(e);
             }
         }
+        */
         SaveData();
-    }
-    public void SelectItem(int num)
-    {
-        this.playData.nowItem = num;
     }
 
 }

@@ -25,7 +25,11 @@ public class SceneData : MonoBehaviour, IListener {
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
         if(et == EVENT_TYPE.INIT_PLAYERDATA)
-        {   
+        {
+            foreach (var e in FindObjectsOfType<ButtonObject>())
+            {
+                e.InitObjects();
+            }
             csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_OBJECT, this, (PlayData)param);
         }
     }
