@@ -7,6 +7,9 @@ public class MotionTrigger : InitObject, IListener
 {
     public bool IsMaintainAfterLoad = true;
     public List<MotionUnit> motionList;
+    public bool isMotionSequence = false;
+    public List<MotionUnit> motionSequence;
+
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.MOTION_START, this);
@@ -49,9 +52,20 @@ public class MotionTrigger : InitObject, IListener
     {
         OnLoadValue = false;
         SaveValue();
-        foreach (var e in motionList)
+        if (!isMotionSequence)
         {
-            StartCoroutine(PlayMotion(e));
+            foreach (var e in motionList)
+            {
+                StartCoroutine(PlayMotion(e));
+            }
+        }
+        else if (isMotionSequence)
+        {
+            Sequence tweenSeq;
+            /*
+             * 2018 10 14 수정 중
+            tweenSeq.AppendCallback(StartCoroutine=>
+            */
         }
     }
 
@@ -73,10 +87,33 @@ public class MotionTrigger : InitObject, IListener
                 }
             case MOTION_TYPE.FADEIN:
                 {
+                    foreach(var e in unit.target.GetComponentInChildren<Renderer>().materials)
+                    {
+                        e.DOFade(1, unit.fadeTime);
+                    }
                     break;
                 }
             case MOTION_TYPE.FADEOUT:
                 {
+                    foreach (var e in unit.target.GetComponentInChildren<Renderer>().materials)
+                    {
+                        e.DOFade(0, unit.fadeTime);
+                    }
+                    break;
+                }
+            case MOTION_TYPE.SHOWVIEW:
+                {
+                    unit.beforeView = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>().nowView._cam;
+                    unit.afterView = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>().Views.Find(x => x._name == unit.afterViewName)._cam;
+                    GameObject nowUI = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>().nowView._ui;
+                    nowUI.SetActive(false);
+                    unit.beforeView.SetActive(false);
+                    unit.afterView.SetActive(true);
+                    yield return new WaitForSeconds(unit.showTime * Time.deltaTime);
+                    nowUI.SetActive(true);
+                    unit.afterView.SetActive(false);
+                    unit.beforeView.SetActive(true);
+                    yield return null;
                     break;
                 }
         }

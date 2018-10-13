@@ -29,4 +29,12 @@ public class MotionUnit{
     public float moveSpeed;
     public Vector3 movePos;
     #endregion
+
+    #region MOTION_TYPE : SHOWVIEW
+    public float showTime;
+    public GameObject beforeView;
+    public string afterViewName;
+    public GameObject afterView;
+    
+    #endregion
 }

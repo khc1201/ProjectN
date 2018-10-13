@@ -25,7 +25,8 @@ public enum MOTION_TYPE
     ROTATE,
     FADEOUT,
     FADEIN,
-    MOVE
+    MOVE,
+    SHOWVIEW
 }
 public enum PLAY_TYPE
 {
