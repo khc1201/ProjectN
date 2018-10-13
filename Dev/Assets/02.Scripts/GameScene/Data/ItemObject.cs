@@ -25,12 +25,19 @@ public class ItemObject : InitObject, IListener
         if (this.OnLoadValue)
         {
             ShowObject();
-            targetGetButton.targetButton.onClick.AddListener(OnClicked);
+            foreach (var b in targetGetButton.targetButton)
+            {
+                b.onClick.AddListener(OnClicked);
+            }
             //targetGetButton.gameObject.SetActive(true);
         }
         else if (!this.OnLoadValue){
             HideObject();
-            targetGetButton.targetButton.onClick.RemoveAllListeners();
+            foreach (var b in targetGetButton.targetButton)
+            {
+                b.onClick.RemoveAllListeners();
+            }
+            //targetGetButton.targetButton.onClick.RemoveAllListeners();
             //targetGetButton.gameObject.SetActive(false);
         }
     }
@@ -60,8 +67,6 @@ public class ItemObject : InitObject, IListener
           
             case EVENT_TYPE.INIT_OBJECT:
                 {
-                    //for test  
-                    Debug.Log("ItemObject OnEvent");
                     base.LoadValue();
                     InitObjects();
                     //targetGetButton.InitObjects();

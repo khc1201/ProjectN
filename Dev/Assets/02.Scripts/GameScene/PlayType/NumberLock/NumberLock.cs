@@ -94,7 +94,7 @@ public class NumberLock : MonoBehaviour
     public void DoComplete()
     {
         this.gameObject.GetComponent<TriggerSender>().SendTrigger();
-        
+        this.GetComponent<ButtonObject>().HideButton();
     }
 
 }

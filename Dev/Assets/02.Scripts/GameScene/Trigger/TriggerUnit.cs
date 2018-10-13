@@ -8,8 +8,6 @@ public class TriggerUnit
     #region 기본 영역
     public string index;
     public string desc;
-    public bool IsTriggered = false;
-    public bool IsValid = true;
     #endregion
 
     public bool IsShowButton;

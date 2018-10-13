@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TriggerListener : InitObject, IListener {
-    public bool IsReady;
+    public bool IsOnceTrigger = true;
     public List<TriggerUnit> Triggers;
     
     public void Start()
@@ -11,11 +11,26 @@ public class TriggerListener : InitObject, IListener {
         csEventManager.Instance.AddListener(EVENT_TYPE.SEND_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.SHOW_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.HIDE_TRIGGER, this);
-        //csEventManager.Instance.AddListener(EVENT_TYPE.INIT_TRIGGER, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
-
-        //for test
-        base.SaveValue();
+    }
+    public override void InitObjects()
+    {
+        base.InitObjects();
+        if(!OnLoadValue && IsOnceTrigger)
+        {
+            foreach(var e in Triggers)
+            {
+                StartTrigger(e.index);
+            }
+        }
+        if (OnLoadValue)
+        {
+            ShowThisTrigger();
+        }
+        else if (!OnLoadValue)
+        {
+            HideThisTrigger();
+        }
     }
 
     public override void OnEvent(EVENT_TYPE et, Component sender, object param = null)
@@ -29,27 +44,23 @@ public class TriggerListener : InitObject, IListener {
                 }
             case EVENT_TYPE.SHOW_TRIGGER:
                 {
-                    ShowTrigger(param.ToString());
+                    //ShowTrigger(param.ToString());
                     break;
                 }
             case EVENT_TYPE.HIDE_TRIGGER:
                 {
-                    HideTrigger(param.ToString());
+                    //HideTrigger(param.ToString());
                     break;
                 }
                 
             case EVENT_TYPE.INIT_OBJECT:
                 {
                     base.LoadValue();
-                    
+                    InitObjects();
                     break;
                 }
         }
-    }
-    public void InitTrigger(string idx)
-    {
-        StartTrigger(idx, true);
-    }
+    }/*
     public void ShowTrigger(string idx)
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
@@ -59,18 +70,25 @@ public class TriggerListener : InitObject, IListener {
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
         if(target.IsValid) target.IsValid = false;
+    }*/
+    public void ShowThisTrigger()
+    {
+        OnLoadValue = true;
+        SaveValue();
+    }
+    public void HideThisTrigger()
+    {
+        OnLoadValue = false;
+        SaveValue();
     }
 
-    public void StartTrigger(string idx, bool isInit = false)
+    public void StartTrigger(string idx)
     {
         TriggerUnit target = Triggers.Find(x => x.index == idx);
         if(target == null)
         {
+            Debug.Log("target 이 지정되지 않았습니다. idx : " + idx);
             return;
-        }
-        if (isInit)
-        {
-            target.IsTriggered = true;
         }
         /*
         if (target.IsTriggered==false)
@@ -84,14 +102,17 @@ public class TriggerListener : InitObject, IListener {
         */
         if (target.IsShowButton)    Trigger_ShowButton(target, true);
         if (target.IsHideButton)    Trigger_ShowButton(target, false);
-        if (target.IsShowTrigger)   Trigger_ShowTrigger(target, true);
-        if (target.IsHideTrigger)   Trigger_ShowTrigger(target, false);
+        //if (target.IsShowTrigger)   Trigger_ShowTrigger(target, true);
+        //if (target.IsHideTrigger)   Trigger_ShowTrigger(target, false);
         if (target.IsShowObject)    Trigger_ShowObject(target, true);
         if (target.IsHideObject)    Trigger_ShowObject(target, false);
-        if (target.IsPlayMotion)    Trigger_StartMotion(target);
-        if (target.IsPlaySound)     Trigger_PlaySound(target.Play_SoundName);
-        if (target.IsSendTrigger)   Trigger_SendTrigger(target.Send_TriggerName);
-        if (target.IsGetItem) Trigger_GetItem(target);
+        if (OnLoadValue)
+        {
+            if (target.IsPlayMotion) Trigger_StartMotion(target);
+            if (target.IsPlaySound) Trigger_PlaySound(target.Play_SoundName);
+            if (target.IsSendTrigger) Trigger_SendTrigger(target.Send_TriggerName);
+            if (target.IsGetItem) Trigger_GetItem(target);
+        }
     }
     public void Trigger_GetItem(TriggerUnit target)
     {
@@ -153,6 +174,7 @@ public class TriggerListener : InitObject, IListener {
         }
     }
 
+    /*
     private void Trigger_ShowTrigger(TriggerUnit target, bool isShow)
     {
         if (isShow)
@@ -169,6 +191,6 @@ public class TriggerListener : InitObject, IListener {
                 csEventManager.Instance.PostNotification(EVENT_TYPE.HIDE_TRIGGER, this, e);
             }
         }
-    }
+    }*/
 
 }

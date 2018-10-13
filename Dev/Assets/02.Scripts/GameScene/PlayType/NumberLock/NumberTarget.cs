@@ -19,7 +19,10 @@ public class NumberTarget : MonoBehaviour {
     }
     public void ClearValue()
     {
-        numberText.text = "";
+        if (numberText != null)
+        {
+            numberText.text = "";
+        }
     }
     public void ChangeValue(string value)
     {

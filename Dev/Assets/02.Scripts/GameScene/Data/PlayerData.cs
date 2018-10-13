@@ -113,10 +113,8 @@ public class PlayerData : MonoBehaviour, IListener
     public IEnumerator LateStart()
     {
         yield return new WaitForFixedUpdate();
-        yield return new WaitForFixedUpdate();
-        yield return new WaitForFixedUpdate();
-        yield return new WaitForFixedUpdate();
-        csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_PLAYERDATA, this, playData);
+        //yield return new WaitForSecondsRealtime(2.0f);
+        csEventManager.Instance.PostNotification(EVENT_TYPE.INIT_PLAYERDATA, this);
         yield return null;
     }
     public void CreateData()

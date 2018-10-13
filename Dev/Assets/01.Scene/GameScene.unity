@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 53074166}
   m_Layer: 5
   m_Name: UIs
-  m_TagString: Untagged
+  m_TagString: UIButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3050,12 +3050,10 @@ MonoBehaviour:
   Name: "\uACE8\uB4DC\uC544\uC774\uD15C\uD68D\uB4DD"
   Index: T002_GETGOLDKEY
   OnLoadValue: 1
-  IsReady: 0
+  IsOnceTrigger: 1
   Triggers:
   - index: TU001_GETGOLDKEY
     desc: "\uACE8\uB4DC\uD0A4\uD68D\uB4DD"
-    IsTriggered: 0
-    IsValid: 0
     IsShowButton: 0
     Show_Button: []
     IsHideButton: 0
@@ -13944,6 +13942,7 @@ GameObject:
   - component: {fileID: 799230494}
   - component: {fileID: 799230495}
   - component: {fileID: 799230496}
+  - component: {fileID: 799230497}
   m_Layer: 5
   m_Name: V3301_Kitchen_Refri_focus_Refri
   m_TagString: Untagged
@@ -14016,7 +14015,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SendTriggerList:
-  - TEST01
+  - V3301_openRefri
+--- !u!114 &799230497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799230493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb15f90b40dea84dbefaf5e3ed328e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: button_refriNumber
+  OnLoadValue: 1
+  targetButton:
+  - {fileID: 1635583605}
+  - {fileID: 620528173}
+  - {fileID: 313240532}
+  - {fileID: 477458348}
+  - {fileID: 878740427}
+  - {fileID: 1521231554}
+  - {fileID: 640474298}
+  - {fileID: 446804527}
+  - {fileID: 1865430487}
+  - {fileID: 183167599}
+  - {fileID: 538584662}
 --- !u!1 &800886755
 GameObject:
   m_ObjectHideFlags: 0
@@ -14060,13 +14085,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uC2F1\uD06C\uB300\uD480\uBA74\uC5F4\uB9AC\uB294\uD2B8\uB9AC\uAC70"
   Index: T0002
-  OnLoadValue: 0
-  IsReady: 0
+  OnLoadValue: 1
+  IsOnceTrigger: 1
   Triggers:
   - index: TEST02
     desc: 
-    IsTriggered: 0
-    IsValid: 1
     IsShowButton: 0
     Show_Button: []
     IsHideButton: 0
@@ -14105,7 +14128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uC2F1\uD06C\uB300\uC5F4\uB9AC\uB294\uD2B8\uB9AC\uAC70"
   Index: M0001
-  OnLoadValue: 0
+  OnLoadValue: 1
+  IsMaintainAfterLoad: 1
   motionList:
   - desc: "\uBB38\uC5F4\uB9BC1"
     target: {fileID: 822492724}
@@ -21562,9 +21586,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\uACE8\uB4DC\uC5F4\uC1E0\uD68D\uB4DD\uBC84\uD2BC"
-  Index: B0001
+  Index: BTN_GetGoldKey
   OnLoadValue: 1
-  targetButton: {fileID: 743178665}
+  targetButton:
+  - {fileID: 743178665}
 --- !u!1001 &1230759794
 Prefab:
   m_ObjectHideFlags: 0
@@ -25104,9 +25129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea98f69603c7074a80882efa6cd8fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Index: 
-  OnLoadValue: 0
+  Name: "\uBB38\uC81C \uD47C \uD6C4 \uB0C9\uC7A5\uACE0 \uBB38 \uC5F4\uB9BC"
+  Index: M002_OpenRefri
+  OnLoadValue: 1
+  IsMaintainAfterLoad: 1
   motionList:
   - desc: 
     target: {fileID: 999080231}
@@ -25131,14 +25157,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\uB0C9\uC7A5\uACE0\uBB38\uC81C\uD480\uBA74\uD574\uC81C\uB418\uB294\uD2B8\uB9AC\uAC70"
-  Index: T0001
-  OnLoadValue: 0
-  IsReady: 1
+  Index: TRG_001
+  OnLoadValue: 1
+  IsOnceTrigger: 1
   Triggers:
-  - index: TEST01
+  - index: V3301_openRefri
     desc: 
-    IsTriggered: 0
-    IsValid: 1
     IsShowButton: 0
     Show_Button: []
     IsHideButton: 0
@@ -25154,7 +25178,7 @@ MonoBehaviour:
     - {fileID: 1863217165}
     - {fileID: 2136828301}
     IsPlayMotion: 1
-    Play_MotionName: M0001
+    Play_MotionName: M002_OpenRefri
     IsPlaySound: 0
     Play_SoundName: 
     IsPlayEffect: 0
@@ -34834,6 +34858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a78a138a9a72941a355b83d8c39aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonObjects:
+  - {fileID: 1229749007}
+  - {fileID: 799230497}
 --- !u!4 &2069794731
 Transform:
   m_ObjectHideFlags: 0

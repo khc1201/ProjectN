@@ -20,8 +20,9 @@ public class CameraController : MonoBehaviour,IListener {
             v._triggerListener = Triggers.transform.Find(v._name).gameObject;
         }
     }
-    public void InitView(PlayData data)
+    public void InitView()
     {
+        PlayData data = PlayerData.singletone.playData;
         nowView = Views.Find(x => x._index == data.NowView);
         OnMoveToView(nowView._index);
         //csEventManager.Instance.PostNotification(EVENT_TYPE.SHOW_HUD, this, nowView);
@@ -30,7 +31,7 @@ public class CameraController : MonoBehaviour,IListener {
     {
         if (et == EVENT_TYPE.INIT_PLAYERDATA)
         {
-            InitView(param as PlayData);
+            InitView();
         }
     }
 	public void OnMoveToView(int viewIndex)

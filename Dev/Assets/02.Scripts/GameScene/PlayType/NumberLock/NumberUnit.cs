@@ -16,7 +16,7 @@ public class NumberUnit : MonoBehaviour
     {
         this.GetComponent<Button>().onClick.RemoveAllListeners();
         this.GetComponent<Button>().onClick.AddListener(OnClick);
-
+        //csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
     }
     public void SetClickable()
     {

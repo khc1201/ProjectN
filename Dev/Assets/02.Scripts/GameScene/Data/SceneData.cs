@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneData : MonoBehaviour, IListener {
-
+    public List<ButtonObject> buttonObjects;
     #region : SceneData 의 구성
     /*
     1. Scene 의 변동 데이터에 대한 정보를 가지고 있다가, Load 에서 진행 상태를 저장한다.
@@ -25,8 +25,14 @@ public class SceneData : MonoBehaviour, IListener {
     public void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {
         if(et == EVENT_TYPE.INIT_PLAYERDATA)
-        {
+        {/*
             foreach (var e in FindObjectsOfType<ButtonObject>())
+            {
+                e.InitObjects();
+            }
+            */
+            //buttonObjects = GameObject.FindGameObjectWithTag("UIButtons").GetComponentsInChildren<ButtonObject>();
+            foreach(var e in buttonObjects)
             {
                 e.InitObjects();
             }
