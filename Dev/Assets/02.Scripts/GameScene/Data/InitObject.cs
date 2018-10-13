@@ -18,7 +18,7 @@ public class InitObject : MonoBehaviour, IListener {
 
     public string Name;
     public string Index;
-    public bool OnLoadValue;
+    public bool OnLoadValue = true;
     
     public void LoadValue()
     {  

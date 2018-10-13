@@ -6,22 +6,26 @@ using UnityEngine.UI;
 public class ButtonObject : InitObject, IListener
 {
     public List<Button> targetButton;
-    public void Start()
-    {
-        //csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
-        //base.SaveValue();
-    }
+
+    /*
     public void OnEnable()
     {
-        if (!(OnLoadValue))
+        if (!(this.OnLoadValue))
         {
             foreach(var e in targetButton)
             {
                 e.gameObject.SetActive(false);
             }
         }
+        else if (this.OnLoadValue)
+        {
+            foreach (var e in targetButton)
+            {
+                e.gameObject.SetActive(true);
+            }
+        }
     }
-
+    */
     public override void InitObjects()
     {
 
@@ -29,12 +33,14 @@ public class ButtonObject : InitObject, IListener
 
         if (this.OnLoadValue)
         {
-            ShowButton();
+                ShowButton();
 
         }
-        else if (!this.OnLoadValue)
+        else if (!(this.OnLoadValue))
         {
-            HideButton();
+
+                HideButton();
+
         }
 
     }
@@ -42,10 +48,12 @@ public class ButtonObject : InitObject, IListener
     {
         base.OnLoadValue = true;
         base.SaveValue();
-        foreach(var b in targetButton)
-        {
-            b.enabled = true;
-        }
+
+            foreach (var b in targetButton)
+            {
+                b.enabled = true;
+            }
+        
     }
     public void HideButton()
     {

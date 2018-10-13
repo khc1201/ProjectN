@@ -19,6 +19,8 @@ public class ItemObject : InitObject, IListener
     public void OnClicked()
     {
         csEventManager.Instance.PostNotification(EVENT_TYPE.SEND_TRIGGER, this, SendTriggerIndex);
+        //for test
+        Debug.Log("클릭 발생 및 트리거 : " + SendTriggerIndex);
     }
     public override void InitObjects()
     {

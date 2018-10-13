@@ -7,6 +7,7 @@ using System;
 
 public class ClickAndMove : MonoBehaviour
 {
+    public string SendTriggerIndex;
     public GameObject targetObj;
     private Button buttonUI;
     public List<Button> otherButtonUI;
@@ -73,6 +74,10 @@ public class ClickAndMove : MonoBehaviour
             buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, buttonInitPos.y);
             tween = targetObj.transform.DOLocalMove(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
             IsUsed = false;
+        }
+        if(SendTriggerIndex!="")
+        {
+            csEventManager.Instance.PostNotification(EVENT_TYPE.SEND_TRIGGER, this, SendTriggerIndex);
         }
     }
 

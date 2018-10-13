@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TriggerListener : InitObject, IListener {
     public bool IsOnceTrigger = true;
@@ -39,7 +40,7 @@ public class TriggerListener : InitObject, IListener {
         {
             case EVENT_TYPE.SEND_TRIGGER:
                 {
-                    StartTrigger(param.ToString());
+                    StartTrigger(param as string);
                     break;
                 }
             case EVENT_TYPE.SHOW_TRIGGER:
@@ -84,7 +85,9 @@ public class TriggerListener : InitObject, IListener {
 
     public void StartTrigger(string idx)
     {
-        TriggerUnit target = Triggers.Find(x => x.index == idx);
+        //for test
+        Debug.Log(this.gameObject.name + " 의 stratTrigger : " + idx.ToString());
+        TriggerUnit target = Triggers.Find(x => x.index.ToString() == idx.ToString());
         if(target == null)
         {
             Debug.Log("target 이 지정되지 않았습니다. idx : " + idx);
@@ -104,6 +107,7 @@ public class TriggerListener : InitObject, IListener {
         if (target.IsHideButton)    Trigger_ShowButton(target, false);
         //if (target.IsShowTrigger)   Trigger_ShowTrigger(target, true);
         //if (target.IsHideTrigger)   Trigger_ShowTrigger(target, false);
+        if (target.IsSwitchButton) Trigger_SwitchButton(target);
         if (target.IsShowObject)    Trigger_ShowObject(target, true);
         if (target.IsHideObject)    Trigger_ShowObject(target, false);
         if (OnLoadValue)
@@ -112,6 +116,20 @@ public class TriggerListener : InitObject, IListener {
             if (target.IsPlaySound) Trigger_PlaySound(target.Play_SoundName);
             if (target.IsSendTrigger) Trigger_SendTrigger(target.Send_TriggerName);
             if (target.IsGetItem) Trigger_GetItem(target);
+        }
+    }
+    public void Trigger_SwitchButton(TriggerUnit target)
+    {
+        foreach(var e in target.Switch_Button)
+        {
+            if (e.activeInHierarchy)
+            {
+                e.SetActive(false);
+            }
+            else if (!e.activeInHierarchy)
+            {
+                e.SetActive(true);
+            }
         }
     }
     public void Trigger_GetItem(TriggerUnit target)

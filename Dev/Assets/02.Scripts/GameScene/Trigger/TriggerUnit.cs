@@ -14,6 +14,8 @@ public class TriggerUnit
     public GameObject[] Show_Button;
     public bool IsHideButton;
     public GameObject[] Hide_Button;
+    public bool IsSwitchButton;
+    public GameObject[] Switch_Button;
     public bool IsShowTrigger;
     public string[] Show_TriggerName;
     public bool IsHideTrigger;

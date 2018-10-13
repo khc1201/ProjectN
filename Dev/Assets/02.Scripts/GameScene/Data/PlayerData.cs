@@ -167,7 +167,7 @@ public class PlayerData : MonoBehaviour, IListener
 
         string stringData = JsonWriter.Serialize(initData);
         //for test
-        Debug.Log(stringData);
+        //Debug.Log(stringData);
         var sw = new StreamWriter(new FileStream(initdataPath, FileMode.Open));
         sw.WriteLine(stringData);
         sw.Close();
