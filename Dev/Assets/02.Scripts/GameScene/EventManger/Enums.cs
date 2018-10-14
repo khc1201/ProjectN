@@ -9,6 +9,7 @@
     MOTION_START,
 
     GET_ITEM,
+    USE_ITEM,
     SELECT_ITEM,
 
     //INIT_TRIGGER,

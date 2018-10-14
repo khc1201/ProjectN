@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UseItem : MonoBehaviour {
-
+    public Button thisButton;
     public string NeedItemString;
     public string SendTriggerIndex;
-	public void ClickAndCheck()
+    public void Start()
+    {
+        thisButton = this.GetComponentInChildren<Button>();
+        thisButton.onClick.AddListener(ClickAndCheck);
+    }
+    public void ClickAndCheck()
     {
         if (ItemList.singletone.nowSelectItem.Index == NeedItemString)
         {

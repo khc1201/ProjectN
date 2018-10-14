@@ -60,6 +60,13 @@ public class TriggerListener : InitObject, IListener {
                     InitObjects();
                     break;
                 }
+                /*
+            case EVENT_TYPE.USE_ITEM:
+                {
+                    //StartTrigger((param as UseItem).SendTriggerIndex, (param as UseItem).NeedItemString);
+                    StartTrigger(param as string);
+                    break;
+                }*/
         }
     }/*
     public void ShowTrigger(string idx)
@@ -83,7 +90,7 @@ public class TriggerListener : InitObject, IListener {
         SaveValue();
     }
 
-    public void StartTrigger(string idx)
+    public void StartTrigger(string idx, string itemString = "")
     {
         //for test
         Debug.Log(this.gameObject.name + " 의 stratTrigger : " + idx.ToString());
@@ -122,6 +129,7 @@ public class TriggerListener : InitObject, IListener {
     public void Trigger_UseItem(TriggerUnit target)
     {
         ItemList.singletone.RemoveItem(target.useItemObject.ItemIndex);
+        target.buttonObject.HideButton();
     }
     public void Trigger_SwitchButton(TriggerUnit target)
     {

@@ -28,7 +28,7 @@ public class InitObject : MonoBehaviour, IListener {
         }
         else if (!(PlayerData.singletone.initData.ContainsKey(Index)))
         {
-            Debug.LogError("InitData 안에 이 오브젝트가 없는데? : 새로 등록할게 " + this.gameObject);
+            Debug.Log("InitData 안에 이 오브젝트가 없는데? : 새로 등록할게 " + this.gameObject);
             PlayerData.singletone.SaveInitData(this.Index, this.OnLoadValue);
             LoadValue();
         }
