@@ -35,5 +35,8 @@ public class TriggerUnit
     public bool IsGetItem;
     public ItemObject itemObject;
     public ButtonObject buttonObject;
+    public bool IsUseItem;
+    public ItemObject useItemObject;
+    public ButtonObject useButtonObject;
 
 }

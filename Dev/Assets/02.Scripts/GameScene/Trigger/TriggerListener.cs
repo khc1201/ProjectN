@@ -116,7 +116,12 @@ public class TriggerListener : InitObject, IListener {
             if (target.IsPlaySound) Trigger_PlaySound(target.Play_SoundName);
             if (target.IsSendTrigger) Trigger_SendTrigger(target.Send_TriggerName);
             if (target.IsGetItem) Trigger_GetItem(target);
+            if (target.IsUseItem) Trigger_UseItem(target);   
         }
+    }
+    public void Trigger_UseItem(TriggerUnit target)
+    {
+        ItemList.singletone.RemoveItem(target.useItemObject.ItemIndex);
     }
     public void Trigger_SwitchButton(TriggerUnit target)
     {
