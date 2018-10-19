@@ -87,20 +87,33 @@ public class ItemList : MonoBehaviour,IListener
     {
         inventoryItem.Add(itemIndex);
         inventoryItem.Sort();
-        UpdateUI();
+        this.UpdateUI();
     }
     public void RemoveItem(string itemIndex)
     {
+        //for test
+        //Debug.Log("now have item = " + inventoryItem.ToString());
+        Debug.Log("Remove itemindex = " + itemIndex + " // is have true? " + inventoryItem.Contains(itemIndex));
         inventoryItem.Remove(itemIndex);
         inventoryItem.Sort();
-        UpdateUI();
+
+        this.UpdateUI();
     }
     public void UpdateUI()
     {
-
-        for(int i = 0; i < inventoryItem.Count; i++)
+        if (inventoryItem.Count == 0)
         {
-            inventorySlots[i].SetItem(itemList.Find(x => x.Index == inventoryItem[i]));
+            foreach(var s in inventorySlots)
+            {
+                s.SetItem();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < inventoryItem.Count; i++)
+            {
+                inventorySlots[i].SetItem(itemList.Find(x => x.Index == inventoryItem[i]));
+            }
         }
         SaveNowList();
     }

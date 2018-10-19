@@ -19,7 +19,7 @@ public class InitObject : MonoBehaviour, IListener {
     public string Name;
     public string Index;
     public bool OnLoadValue = true;
-    
+    public GameObject targetGameObject;
     public void LoadValue()
     {  
         if (PlayerData.singletone.initData.ContainsKey(Index))
@@ -28,7 +28,8 @@ public class InitObject : MonoBehaviour, IListener {
         }
         else if (!(PlayerData.singletone.initData.ContainsKey(Index)))
         {
-            Debug.Log("InitData 안에 이 오브젝트가 없는데? : 새로 등록할게 " + this.gameObject);
+            //for test
+            //Debug.Log("InitData 안에 이 오브젝트가 없는데? : 새로 등록할게 " + this.gameObject);
             PlayerData.singletone.SaveInitData(this.Index, this.OnLoadValue);
             LoadValue();
         }
@@ -50,5 +51,29 @@ public class InitObject : MonoBehaviour, IListener {
     }
     public virtual void InitObjects()
     {
+        LoadValue();
+        if(this.targetGameObject != null)
+        {
+            if (OnLoadValue)
+            {
+                ShowInitObject();
+            }
+            else if (!OnLoadValue)
+            {
+                HideInitObject();
+            }
+        }
+    }
+    public void ShowInitObject()
+    {
+        this.OnLoadValue = true;
+        this.targetGameObject.SetActive(true);
+        this.SaveValue();
+    }
+    public void HideInitObject()
+    {
+        this.OnLoadValue = false;
+        this.targetGameObject.SetActive(false);
+        this.SaveValue();
     }
 }

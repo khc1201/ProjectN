@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ButtonObject : InitObject, IListener
 {
     public List<Button> targetButton;
-
+    
     /*
     public void OnEnable()
     {
@@ -30,10 +30,10 @@ public class ButtonObject : InitObject, IListener
     {
 
         base.LoadValue();
-
+        base.InitObjects();
         if (this.OnLoadValue)
         {
-                ShowButton();
+            ShowButton();
 
         }
         else if (!(this.OnLoadValue))

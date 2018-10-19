@@ -17,9 +17,12 @@ public class InventorySlot : MonoBehaviour {
 
     public void SetItem(Item item = null)
     {
+        //for test
+        //Debug.Log(item.Index);
         if(item == null)
         {
             itemIcon.enabled = false;
+            myItem = null;
             return;
         }
         myItem = item;

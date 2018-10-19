@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class ItemObject : InitObject, IListener
 {
     public GameObject target;
-    public ButtonObject targetGetButton;
+    public ButtonObject targetGetButtonObject;
     public string ItemIndex;
     public string SendTriggerIndex;
 
     public void Start()
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
+        //targetGetButton.onClick.AddListener(OnClicked);
         //base.SaveValue();
     }
     public void OnClicked()
@@ -24,18 +25,19 @@ public class ItemObject : InitObject, IListener
     }
     public override void InitObjects()
     {
-        if (this.OnLoadValue)
+        base.InitObjects();
+        if (base.OnLoadValue)
         {
             ShowObject();
-            foreach (var b in targetGetButton.targetButton)
+            foreach (Button b in targetGetButtonObject.targetButton)
             {
-                b.onClick.AddListener(OnClicked);
+                b.onClick.AddListener(this.OnClicked);
             }
             //targetGetButton.gameObject.SetActive(true);
         }
-        else if (!this.OnLoadValue){
+        else if (!base.OnLoadValue){
             HideObject();
-            foreach (var b in targetGetButton.targetButton)
+            foreach (var b in targetGetButtonObject.targetButton)
             {
                 b.onClick.RemoveAllListeners();
             }
@@ -59,7 +61,7 @@ public class ItemObject : InitObject, IListener
     public void ClickAndHide()
     {
         ItemList.singletone.AddItem(this.ItemIndex);
-        targetGetButton.HideButton();
+        targetGetButtonObject.HideButton();
         HideObject();
     }
     public override void OnEvent(EVENT_TYPE et, Component sender, object param = null)
@@ -69,6 +71,8 @@ public class ItemObject : InitObject, IListener
           
             case EVENT_TYPE.INIT_OBJECT:
                 {
+                    //for test
+                    //Debug.Log("Step 1  - OnEvent - Init Object");
                     base.LoadValue();
                     InitObjects();
                     //targetGetButton.InitObjects();

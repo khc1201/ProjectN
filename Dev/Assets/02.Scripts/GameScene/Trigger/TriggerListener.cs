@@ -93,11 +93,12 @@ public class TriggerListener : InitObject, IListener {
     public void StartTrigger(string idx, string itemString = "")
     {
         //for test
-        Debug.Log(this.gameObject.name + " 의 stratTrigger : " + idx.ToString());
+        //Debug.Log(this.gameObject.name + " 의 stratTrigger : " + idx.ToString());
         TriggerUnit target = Triggers.Find(x => x.index.ToString() == idx.ToString());
         if(target == null)
         {
-            Debug.Log("target 이 지정되지 않았습니다. idx : " + idx);
+            //for test
+            //Debug.Log("target 이 지정되지 않았습니다. idx : " + idx);
             return;
         }
         /*
@@ -117,19 +118,77 @@ public class TriggerListener : InitObject, IListener {
         if (target.IsSwitchButton) Trigger_SwitchButton(target);
         if (target.IsShowObject)    Trigger_ShowObject(target, true);
         if (target.IsHideObject)    Trigger_ShowObject(target, false);
-        if (OnLoadValue)
-        {
             if (target.IsPlayMotion) Trigger_StartMotion(target);
             if (target.IsPlaySound) Trigger_PlaySound(target.Play_SoundName);
             if (target.IsSendTrigger) Trigger_SendTrigger(target.Send_TriggerName);
             if (target.IsGetItem) Trigger_GetItem(target);
-            if (target.IsUseItem) Trigger_UseItem(target);   
+            if (target.IsUseItem) Trigger_UseItem(target);
+        if (target.IsShowInitObject) Trigger_InitObject(target, true);
+        if (target.IsHideInitObject) Trigger_InitObject(target, false);
+        if (target.IsShowButtonObject) Trigger_ButtonObject(target, true);
+        if (target.IsHideButtonObject) Trigger_ButtonObject(target, false);
+        if (target.IsShowItemObject) Trigger_ItemObject(target, true);
+        if (target.IsHideItemObject) Trigger_ItemObject(target, false);
+    }
+
+    public void Trigger_ButtonObject(TriggerUnit target, bool isShow)
+    {
+        if (isShow)
+        {
+            foreach (var e in target.Show_ButtonObject)
+            {
+                e.ShowButton();
+            }
+        }
+        else if (!isShow)
+        {
+            foreach (var e in target.Hide_ButtonObject)
+            {
+                e.HideButton();
+            }
+        }
+    }
+
+    public void Trigger_ItemObject(TriggerUnit target, bool isShow)
+    {
+        if (isShow)
+        {
+            foreach (var e in target.Show_ItemObject)
+            {
+                e.ShowObject();
+            }
+        }
+        else if (!isShow)
+        {
+            foreach (var e in target.Hide_ItemObject)
+            {
+                e.HideObject();
+            }
+        }
+    }
+    public void Trigger_InitObject(TriggerUnit target, bool isShow)
+    {
+        if (isShow)
+        {
+            foreach(var e in target.Show_InitObject)
+            {
+                e.ShowInitObject();
+            }
+        }
+        else if (!isShow)
+        {
+            foreach(var e in target.Hide_InitObject)
+            {
+                e.HideInitObject();
+            }
         }
     }
     public void Trigger_UseItem(TriggerUnit target)
     {
+        //for test
+        Debug.Log("step 1");
         ItemList.singletone.RemoveItem(target.useItemObject.ItemIndex);
-        target.buttonObject.HideButton();
+        target.useButtonObject.HideButton();
     }
     public void Trigger_SwitchButton(TriggerUnit target)
     {

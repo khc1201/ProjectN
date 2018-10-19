@@ -32,6 +32,19 @@ public class TriggerUnit
     public string Play_Effect;
     public bool IsSendTrigger;
     public string Send_TriggerName;
+    
+    public bool IsShowInitObject;
+    public InitObject[] Show_InitObject;
+    public bool IsHideInitObject;
+    public InitObject[] Hide_InitObject;
+    public bool IsShowButtonObject;
+    public ButtonObject[] Show_ButtonObject;
+    public bool IsHideButtonObject;
+    public ButtonObject[] Hide_ButtonObject;
+    public bool IsShowItemObject;
+    public ItemObject[] Show_ItemObject;
+    public bool IsHideItemObject;
+    public ItemObject[] Hide_ItemObject;
     public bool IsGetItem;
     public ItemObject itemObject;
     public ButtonObject buttonObject;
