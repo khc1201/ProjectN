@@ -40,7 +40,7 @@ public class ClickAndMove : MonoBehaviour
     }
     private void SetButton()
     {
-        buttonUI.onClick.RemoveAllListeners();
+        buttonUI.onClick.RemoveListener(OnClickMove);
         buttonUI.onClick.AddListener(OnClickMove);
     }
     public void OnMove()

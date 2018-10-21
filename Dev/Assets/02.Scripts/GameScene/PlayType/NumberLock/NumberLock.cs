@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class NumberLock : MonoBehaviour
 {
-    public PLAY_TYPE playType;
+    //public PLAY_TYPE playType;
+    public string SendTriggerIndex;
     public int lockCount; // 풀어야 하는 개수
+    public bool isShowInputText = true;
     public List<NumberUnit> numberUnits; // 입력 툴
     public List<NumberTarget> numberTargets; // 입력 시 변화
     public List<NumberImage> numberImages;
@@ -27,7 +29,7 @@ public class NumberLock : MonoBehaviour
         {
             e.GetMother(this);
         }
-        if (playType != PLAY_TYPE.NUMBERLOCK_CLICKER)
+        if (isShowInputText)
         {
             foreach (var e in numberTargets)
             {
@@ -51,7 +53,7 @@ public class NumberLock : MonoBehaviour
     }
     public void RefreshUI()
     {
-        if (playType == PLAY_TYPE.NUMBERLOCK_CLICKER)   return;
+        if (!(isShowInputText))   return;
         foreach (var e in numberTargets)
         {
             char[] value = nowValue.ToCharArray();
@@ -62,8 +64,7 @@ public class NumberLock : MonoBehaviour
     public void ResetValue()
     {
         nowValue = "";
-        if (playType == PLAY_TYPE.NUMBERLOCK_CLICKER)   return;
-        
+        if (!(isShowInputText))   return;
         foreach (var e in numberTargets)
         {
             e.ClearValue();
@@ -93,8 +94,9 @@ public class NumberLock : MonoBehaviour
     }
     public void DoComplete()
     {
-        this.gameObject.GetComponent<TriggerSender>().SendTrigger();
-        this.GetComponent<ButtonObject>().HideButton();
+        //this.gameObject.GetComponent<TriggerSender>().SendTrigger();
+        //this.GetComponent<ButtonObject>().HideButton();
+        csEventManager.Instance.PostNotification(EVENT_TYPE.SEND_TRIGGER, this, SendTriggerIndex);
     }
 
 }

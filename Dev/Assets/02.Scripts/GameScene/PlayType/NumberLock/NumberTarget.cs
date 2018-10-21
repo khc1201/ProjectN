@@ -12,7 +12,7 @@ public class NumberTarget : MonoBehaviour {
     List<NumberImage> list_numberImage;
 
 
-    public void Start()
+    public void OnEnable()
     {
         numberText = this.GetComponent<Text>();
         ClearValue();

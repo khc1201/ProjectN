@@ -29,9 +29,11 @@ public enum MOTION_TYPE
     MOVE,
     SHOWVIEW
 }
+/*
 public enum PLAY_TYPE
 {
     NUMBERLOCK_NUMBER, //일반적인 비밀번호 맞추기 형태
     NUMBERLOCK_SHPAER, //색깔을 입력한다던지 하는 형태
     NUMBERLOCK_CLICKER, //버튼 순서대로 누르기 형태
 }
+*/

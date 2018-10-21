@@ -7,9 +7,11 @@ public class NumberUnit : MonoBehaviour
     public string thisValue;
     public bool IsClearButton = false;
     public bool IsClickable = true;
+    public GameObject targetObj;
     private Button buttonObj;
     private NumberLock mother;
     private Tween tween1;
+    public float moveZPos = -0.1f;
 
 
     public void Start()
@@ -34,7 +36,7 @@ public class NumberUnit : MonoBehaviour
     {
         mother = target;
 
-        if(mother.playType == PLAY_TYPE.NUMBERLOCK_CLICKER)
+        if(!(mother.isShowInputText))
         {
             if (buttonObj == null)
             {
@@ -50,12 +52,17 @@ public class NumberUnit : MonoBehaviour
         }
         else
         {
-            if (mother.playType == PLAY_TYPE.NUMBERLOCK_CLICKER && IsClickable)
+            if (!(mother.isShowInputText) && IsClickable)
             {
-                buttonObj.transform.DOLocalMoveZ(0.005f, 0.1f).SetLoops(2, LoopType.Yoyo).OnStart(SetClickDisable).OnComplete(SetClickable).Play();
+                //for test
+                Debug.Log("클릭버튼");
+                targetObj.transform.DOLocalMoveZ(moveZPos, 0.1f).SetLoops(2, LoopType.Yoyo).OnStart(SetClickDisable).OnComplete(SetClickable).Play();
                 mother.SetValue(thisValue);
             }
-            else if (mother.playType != PLAY_TYPE.NUMBERLOCK_CLICKER) { mother.SetValue(thisValue); }
+            else if (mother.isShowInputText)
+            {
+                mother.SetValue(thisValue);
+            }
         }
     }
 
