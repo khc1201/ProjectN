@@ -49,10 +49,13 @@ public class ButtonObject : InitObject, IListener
         base.OnLoadValue = true;
         base.SaveValue();
 
-            foreach (var b in targetButton)
-            {
-                b.enabled = true;
-            }
+        foreach (var b in targetButton)
+        {
+            b.enabled = true;
+            b.gameObject.GetComponent<Image>().enabled = true;
+            b.transform.GetComponentInChildren<Text>().enabled = true;
+            
+        }
         
     }
     public void HideButton()
@@ -61,10 +64,11 @@ public class ButtonObject : InitObject, IListener
         base.SaveValue();
         foreach (var b in targetButton)
         {
-            b.gameObject.GetComponent<Image>().enabled = false;
-            b.transform.GetComponentInChildren<Text>().gameObject.SetActive(false);
+            
             b.enabled = false;
-            b.onClick.RemoveAllListeners();
+            b.gameObject.GetComponent<Image>().enabled = false;
+            b.transform.GetComponentInChildren<Text>().enabled = false;
+            //b.onClick.RemoveAllListeners();
         }
     }
     public override void OnEvent(EVENT_TYPE et, Component sender, object param = null)

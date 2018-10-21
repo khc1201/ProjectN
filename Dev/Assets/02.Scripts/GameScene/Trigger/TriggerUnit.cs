@@ -32,7 +32,10 @@ public class TriggerUnit
     public string Play_Effect;
     public bool IsSendTrigger;
     public string Send_TriggerName;
-    
+    public bool IsShowTriggerObject;
+    public TriggerListener[] Show_TriggerObject;
+    public bool IsHideTriggerObject;
+    public TriggerListener[] Hide_TriggerObject;
     public bool IsShowInitObject;
     public InitObject[] Show_InitObject;
     public bool IsHideInitObject;

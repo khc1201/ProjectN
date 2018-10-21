@@ -14,12 +14,12 @@ public class MotionTrigger : InitObject, IListener
     {
         csEventManager.Instance.AddListener(EVENT_TYPE.MOTION_START, this);
         csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
-
         //for test
         //base.SaveValue();
     }
     public override void InitObjects()
     {
+        base.LoadValue();
         if(!(OnLoadValue) && IsMaintainAfterLoad)
         {
             foreach(var e in motionList)
