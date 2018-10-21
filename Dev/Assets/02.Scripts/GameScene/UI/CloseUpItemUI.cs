@@ -7,7 +7,22 @@ public class CloseUpItemUI : MonoBehaviour {
     public GameObject targetUI;
     public Button Exit;
     public Image ImageIcon;
-    
+
+    public static CloseUpItemUI singletone;
+
+    public void Awake()
+    {
+        if(singletone == null)
+        {
+            singletone = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            DestroyImmediate(this);
+            return;
+        }
+    }
 
     public void Start()
     {
@@ -15,14 +30,14 @@ public class CloseUpItemUI : MonoBehaviour {
         this.HideUI();
     }
 
-    public void ShowUI()
+    public void ShowUI(Item item)
     {
-        if(ItemList.singletone.nowSelectItem == null)
+        if(item == null)
         {
             return;
         }
         //Item nowItem = ItemList.singletone.nowSelectItem;
-        ImageIcon.sprite = ItemList.singletone.nowSelectItem.Icon;
+        ImageIcon.sprite = item.Icon;
         targetUI.SetActive(true);
     }
     public void HideUI()

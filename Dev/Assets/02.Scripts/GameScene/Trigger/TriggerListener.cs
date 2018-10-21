@@ -208,6 +208,7 @@ public class TriggerListener : InitObject, IListener {
     {
         target.itemObject.ClickAndHide();
         target.buttonObject.HideButton();
+        CloseUpItemUI.singletone.ShowUI(ItemList.singletone.itemList.Find(x => x.Index == target.itemObject.ItemIndex));
     }
     private void Trigger_PlaySound(string soundName)
     {

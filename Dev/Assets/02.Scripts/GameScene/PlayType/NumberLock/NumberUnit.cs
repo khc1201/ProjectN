@@ -7,27 +7,28 @@ public class NumberUnit : MonoBehaviour
     public string thisValue;
     public bool IsClearButton = false;
     public bool IsClickable = true;
-    public GameObject buttonObj;
+    private Button buttonObj;
     private NumberLock mother;
     private Tween tween1;
 
 
     public void Start()
     {
-        this.GetComponent<Button>().onClick.RemoveAllListeners();
-        this.GetComponent<Button>().onClick.AddListener(OnClick);
+        buttonObj = this.gameObject.GetComponent<Button>();
+        buttonObj.onClick.RemoveAllListeners();
+        buttonObj.onClick.AddListener(OnClick);
         //csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
     }
     public void SetClickable()
     {
         IsClickable = true;
-        this.GetComponent<Button>().enabled = true;
+        buttonObj.enabled = true;
         
     }
     public void SetClickDisable()
     {
         IsClickable = false;
-        this.GetComponent<Button>().enabled = false;
+        buttonObj.enabled = false;
     }
     public void GetMother(NumberLock target)
     {

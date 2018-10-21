@@ -18,7 +18,7 @@ public class ItemButton : MonoBehaviour {
             && ItemList.singletone.nowSelectItem != null
             && this.transform.parent.GetComponent<InventorySlot>().myItem == ItemList.singletone.nowSelectItem)
         {
-            closeUpItemUI.ShowUI();
+            closeUpItemUI.ShowUI(ItemList.singletone.nowSelectItem);
             return;
         }
         else
