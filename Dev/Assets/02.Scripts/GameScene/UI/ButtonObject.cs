@@ -61,6 +61,8 @@ public class ButtonObject : InitObject, IListener
         base.SaveValue();
         foreach (var b in targetButton)
         {
+            b.gameObject.GetComponent<Image>().enabled = false;
+            b.transform.GetComponentInChildren<Text>().gameObject.SetActive(false);
             b.enabled = false;
             b.onClick.RemoveAllListeners();
         }

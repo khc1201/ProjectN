@@ -206,6 +206,8 @@ public class TriggerListener : InitObject, IListener {
     }
     public void Trigger_GetItem(TriggerUnit target)
     {
+        //for test
+        Debug.Log("Trigger_GetItem // target : " + target.index);
         target.itemObject.ClickAndHide();
         target.buttonObject.HideButton();
         CloseUpItemUI.singletone.ShowUI(ItemList.singletone.itemList.Find(x => x.Index == target.itemObject.ItemIndex));

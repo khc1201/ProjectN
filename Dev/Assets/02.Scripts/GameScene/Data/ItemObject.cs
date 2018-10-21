@@ -32,6 +32,9 @@ public class ItemObject : InitObject, IListener
             foreach (Button b in targetGetButtonObject.targetButton)
             {
                 b.onClick.AddListener(this.OnClicked);
+
+                //for test
+                Debug.Log("OnClick AddListener" + this.Index);
             }
             //targetGetButton.gameObject.SetActive(true);
         }
