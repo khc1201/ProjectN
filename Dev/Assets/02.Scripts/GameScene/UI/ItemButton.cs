@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ItemButton : MonoBehaviour {
     public Button thisButton;
+    public CloseUpItemUI closeUpItemUI;
     public void Start()
     {
         thisButton = this.GetComponent<Button>();
@@ -13,7 +14,17 @@ public class ItemButton : MonoBehaviour {
     }
     public void OnSelect()
     {
-        this.transform.parent.GetComponent<InventorySlot>().SelectThis();
+        if (this.transform.parent.GetComponent<InventorySlot>().myItem != null
+            && ItemList.singletone.nowSelectItem != null
+            && this.transform.parent.GetComponent<InventorySlot>().myItem == ItemList.singletone.nowSelectItem)
+        {
+            closeUpItemUI.ShowUI();
+            return;
+        }
+        else
+        {
+            this.transform.parent.GetComponent<InventorySlot>().SelectThis();
+        }
         //for test
         //Debug.Log("OnSelect 발생");
     }

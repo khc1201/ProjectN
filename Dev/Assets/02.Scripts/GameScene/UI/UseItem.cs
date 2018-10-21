@@ -14,7 +14,8 @@ public class UseItem : MonoBehaviour {
     }
     public void ClickAndCheck()
     {
-        if (ItemList.singletone.nowSelectItem.Index == NeedItemString)
+        if (ItemList.singletone.nowSelectItem != null 
+            && ItemList.singletone.nowSelectItem.Index == NeedItemString)
         {
             //for test  
             Debug.Log("아이템을 사용하셨습니다 : item index : " + NeedItemString);
