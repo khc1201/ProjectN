@@ -19,6 +19,7 @@ public class InitObject : MonoBehaviour, IListener {
     public string Name;
     public string Index;
     public bool OnLoadValue = true;
+    public bool isTrueOnInit = true;
     public GameObject targetGameObject;
     public void LoadValue()
     {  

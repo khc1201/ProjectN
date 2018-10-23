@@ -46,30 +46,44 @@ public class ButtonObject : InitObject, IListener
     }
     public void ShowButton()
     {
-        base.OnLoadValue = true;
-        base.SaveValue();
+        this.OnLoadValue = true;
+        this.SaveValue();
 
-        foreach (var b in targetButton)
+        if (isTrueOnInit)
         {
-            b.enabled = true;
-            b.gameObject.GetComponent<Image>().enabled = true;
-            b.transform.GetComponentInChildren<Text>().enabled = true;
-            
+            foreach (var b in targetButton)
+            {
+                b.enabled = true;
+                b.gameObject.GetComponent<Image>().enabled = true;
+                b.transform.GetComponentInChildren<Text>().enabled = true;
+
+            }
+        }
+        else
+        {
+            foreach (var b in targetButton)
+            {
+                b.enabled = false;
+                b.gameObject.GetComponent<Image>().enabled = false;
+                b.transform.GetComponentInChildren<Text>().enabled = false;
+
+            }
         }
         
     }
     public void HideButton()
     {
-        base.OnLoadValue = false;
-        base.SaveValue();
-        foreach (var b in targetButton)
-        {
-            
-            b.enabled = false;
-            b.gameObject.GetComponent<Image>().enabled = false;
-            b.transform.GetComponentInChildren<Text>().enabled = false;
-            //b.onClick.RemoveAllListeners();
-        }
+        this.OnLoadValue = false;
+        this.SaveValue();
+            foreach (var b in targetButton)
+            {
+
+                b.enabled = false;
+                b.gameObject.GetComponent<Image>().enabled = false;
+                b.transform.GetComponentInChildren<Text>().enabled = false;
+                //b.onClick.RemoveAllListeners();
+            }
+        
     }
     public override void OnEvent(EVENT_TYPE et, Component sender, object param = null)
     {

@@ -216,16 +216,50 @@ public class TriggerListener : InitObject, IListener {
     }
     public void Trigger_SwitchButton(TriggerUnit target)
     {
-        foreach(var e in target.Switch_Button)
+        foreach (var e in target.Switch_Button)
         {
-            if (e.activeInHierarchy)
+
+            ButtonObject btnobj = e.transform.parent.GetComponent<ButtonObject>();
+            if (btnobj != null)
             {
-                e.SetActive(false);
+                if(btnobj.OnLoadValue)
+                {
+                    if (e.activeInHierarchy)
+                    {
+                        e.SetActive(false);
+                        e.GetComponent<Image>().enabled = false;
+                        e.GetComponent<Button>().enabled = false;
+                    }
+                    else if (!e.activeInHierarchy)
+                    {
+                        e.SetActive(true);
+                        e.GetComponent<Image>().enabled = true;
+                        e.GetComponent<Button>().enabled = true;
+                    }
+                }
+                else
+                {
+                    e.SetActive(false);
+                    e.GetComponent<Image>().enabled = false;
+                    e.GetComponent<Button>().enabled = false;
+                }
             }
-            else if (!e.activeInHierarchy)
+            else
             {
-                e.SetActive(true);
+                if (e.activeInHierarchy)
+                {
+                    e.SetActive(false);
+                    e.GetComponent<Image>().enabled = false;
+                    e.GetComponent<Button>().enabled = false;
+                }
+                else if (!e.activeInHierarchy)
+                {
+                    e.SetActive(true);
+                    e.GetComponent<Image>().enabled = true;
+                    e.GetComponent<Button>().enabled = true;
+                }
             }
+
         }
     }
     public void Trigger_GetItem(TriggerUnit target)

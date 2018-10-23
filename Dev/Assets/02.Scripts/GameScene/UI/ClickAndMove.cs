@@ -18,12 +18,15 @@ public class ClickAndMove : MonoBehaviour
     public float moveY;
     public bool IsUsed = false;
     private Tween tween;
+    public bool IsRotate = false;
 
     public void OnEnable()
     {
         IsUsed = false;
+        //if (IsRotate) initPos = targetObj.transform.localEulerAngles;
         initPos = targetObj.transform.localPosition;
         buttonUI = this.gameObject.GetComponent<Button>();
+     
         buttonInitPos = buttonUI.transform.localPosition;
         SetButton();
     }
@@ -60,8 +63,15 @@ public class ClickAndMove : MonoBehaviour
                 e.enabled = false;
             }
             //buttonUI.gameObject.transform.position = Camera.current.WorldToScreenPoint(movePos);
-            tween = targetObj.transform.DOLocalMove(movePos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
-            buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, this.transform.localPosition.y + moveY);
+            if (IsRotate)
+            {
+                tween = targetObj.transform.DOLocalRotate(movePos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+            }
+            else
+            {
+                tween = targetObj.transform.DOLocalMove(movePos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+                buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, this.transform.localPosition.y + moveY);
+            }
             IsUsed = true;
         }
         else
@@ -71,8 +81,15 @@ public class ClickAndMove : MonoBehaviour
                 e.enabled = true;
             }
             //buttonUI.transform.position = Camera.current.WorldToScreenPoint(initPos);
-            buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, buttonInitPos.y);
-            tween = targetObj.transform.DOLocalMove(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+            if (IsRotate)
+            {
+                tween = targetObj.transform.DOLocalRotate(Vector3.zero, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+            }
+            else
+            {
+                buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, buttonInitPos.y);
+                tween = targetObj.transform.DOLocalMove(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+            }
             IsUsed = false;
         }
         if(SendTriggerIndex!="")
