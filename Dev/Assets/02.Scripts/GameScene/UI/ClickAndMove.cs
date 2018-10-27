@@ -40,6 +40,16 @@ public class ClickAndMove : MonoBehaviour
         {
             e.enabled = true;
         }
+
+        if (IsRotate)
+        {
+            tween = targetObj.transform.DOLocalRotate(Vector3.zero, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+        }
+        else
+        {
+            buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, buttonInitPos.y);
+            tween = targetObj.transform.DOLocalMove(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+        }
     }
     private void SetButton()
     {
