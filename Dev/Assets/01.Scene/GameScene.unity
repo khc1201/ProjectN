@@ -700,7 +700,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 10, y: -46.1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26252384
 MonoBehaviour:
@@ -2164,6 +2164,9 @@ MonoBehaviour:
   - Index: I005
     Icon: {fileID: 21300000, guid: 0166ca2c57811b447baa26d2b08d720e, type: 3}
     Name: "\uBE75"
+  - Index: I006
+    Icon: {fileID: 21300000, guid: a8a5f5d939149d64b8fa2084a3069668, type: 3}
+    Name: "\uD654\uC7A5\uC2E4\uCCAD\uC18C\uBE0C\uB7EC\uC2DC"
   inventoryItem: []
   ListinventorySlots:
   - {fileID: 1346059694}
@@ -6283,6 +6286,101 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 243250903}
+--- !u!1 &243283253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 243283254}
+  - component: {fileID: 243283255}
+  m_Layer: 0
+  m_Name: Trigger_UseGoldKey_trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243283254
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243283253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1132856046}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243283255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243283253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9309e7ecff59a4a926e93767309d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: Trigger_UseGoldKey_trigger
+  OnLoadValue: 1
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 0}
+  IsOnceTrigger: 1
+  Triggers:
+  - index: Trigger_UseGoldKey
+    desc: 
+    IsShowButton: 0
+    Show_Button: []
+    IsHideButton: 0
+    Hide_Button: []
+    IsSwitchButton: 0
+    Switch_Button: []
+    IsShowTrigger: 0
+    Show_TriggerName: []
+    IsHideTrigger: 0
+    Hide_TriggerName: []
+    IsShowObject: 0
+    Show_Object: []
+    IsHideObject: 0
+    Hide_Object: []
+    IsPlayMotion: 0
+    Play_MotionName: 
+    IsPlaySound: 0
+    Play_SoundName: 
+    IsPlayEffect: 0
+    Play_Effect: 
+    IsSendTrigger: 0
+    Send_TriggerName: 
+    IsShowTriggerObject: 0
+    Show_TriggerObject: []
+    IsHideTriggerObject: 0
+    Hide_TriggerObject: []
+    IsShowInitObject: 0
+    Show_InitObject: []
+    IsHideInitObject: 1
+    Hide_InitObject:
+    - {fileID: 1353237218}
+    IsShowButtonObject: 1
+    Show_ButtonObject:
+    - {fileID: 903916789}
+    IsHideButtonObject: 0
+    Hide_ButtonObject: []
+    IsShowItemObject: 0
+    Show_ItemObject: []
+    IsHideItemObject: 0
+    Hide_ItemObject: []
+    IsGetItem: 0
+    itemObject: {fileID: 0}
+    buttonObject: {fileID: 0}
+    IsUseItem: 1
+    useItemObject: {fileID: 1117980783}
+    useButtonObject: {fileID: 1724339781}
 --- !u!1 &247489053
 GameObject:
   m_ObjectHideFlags: 0
@@ -8875,6 +8973,8 @@ RectTransform:
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 1724339780}
+  - {fileID: 903916790}
+  - {fileID: 859924643}
   m_Father: {fileID: 53074166}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9000,6 +9100,7 @@ Transform:
   - {fileID: 451590044}
   - {fileID: 1195056569}
   - {fileID: 413220461}
+  - {fileID: 675671526}
   m_Father: {fileID: 432138644}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13631,7 +13732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &602448748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13643,8 +13744,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1488585369}
-  m_Father: {fileID: 912441154}
-  m_RootOrder: 2
+  m_Father: {fileID: 903916790}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13662,7 +13763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11752232a42da5d4db06f008c6859d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SendTriggerIndex: 
+  SendTriggerIndex: Trigger_SwitchGetToiletBrushButton
   targetObj: {fileID: 1345903885}
   otherButtonUI:
   - {fileID: 1861401450}
@@ -15764,6 +15865,55 @@ Transform:
   m_Father: {fileID: 1962073625}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &675671525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 675671526}
+  - component: {fileID: 675671527}
+  m_Layer: 0
+  m_Name: I006_ToiletBrush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &675671526
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675671525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 366470236}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &675671527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675671525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410b29689ce6955468294e55e30094c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: I006_ToiletBrush
+  OnLoadValue: 1
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 0}
+  target: {fileID: 1515051851}
+  targetGetButtonObject: {fileID: 859924642}
+  ItemIndex: I006
+  SendTriggerIndex: Trigger_GetToiletBrush
 --- !u!1 &676349656
 GameObject:
   m_ObjectHideFlags: 0
@@ -20470,6 +20620,59 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff4af5f67c05f9443a70dac3c2402375, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &859924641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 859924643}
+  - component: {fileID: 859924642}
+  m_Layer: 5
+  m_Name: ButtonObj_GetToiletBrush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &859924642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859924641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb15f90b40dea84dbefaf5e3ed328e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: ButtonObj_GetToiletBrush
+  OnLoadValue: 1
+  isTrueOnInit: 0
+  targetGameObject: {fileID: 0}
+  targetButton:
+  - {fileID: 2049071703}
+--- !u!224 &859924643
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859924641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2049071706}
+  m_Father: {fileID: 363180317}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &860402392
 Prefab:
   m_ObjectHideFlags: 0
@@ -21342,6 +21545,100 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 885276503}
+--- !u!1 &887919081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 887919082}
+  - component: {fileID: 887919083}
+  m_Layer: 0
+  m_Name: Trigger_SwitchGetToiletBrushButton_trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &887919082
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 887919081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1132856046}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &887919083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 887919081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9309e7ecff59a4a926e93767309d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: Trigger_SwitchGetToiletBrushButton_trigger
+  OnLoadValue: 1
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 0}
+  IsOnceTrigger: 1
+  Triggers:
+  - index: Trigger_SwitchGetToiletBrushButton
+    desc: 
+    IsShowButton: 0
+    Show_Button: []
+    IsHideButton: 0
+    Hide_Button: []
+    IsSwitchButton: 1
+    Switch_Button:
+    - {fileID: 2049071702}
+    IsShowTrigger: 0
+    Show_TriggerName: []
+    IsHideTrigger: 0
+    Hide_TriggerName: []
+    IsShowObject: 0
+    Show_Object: []
+    IsHideObject: 0
+    Hide_Object: []
+    IsPlayMotion: 0
+    Play_MotionName: 
+    IsPlaySound: 0
+    Play_SoundName: 
+    IsPlayEffect: 0
+    Play_Effect: 
+    IsSendTrigger: 0
+    Send_TriggerName: 
+    IsShowTriggerObject: 0
+    Show_TriggerObject: []
+    IsHideTriggerObject: 0
+    Hide_TriggerObject: []
+    IsShowInitObject: 0
+    Show_InitObject: []
+    IsHideInitObject: 0
+    Hide_InitObject: []
+    IsShowButtonObject: 0
+    Show_ButtonObject: []
+    IsHideButtonObject: 0
+    Hide_ButtonObject: []
+    IsShowItemObject: 0
+    Show_ItemObject: []
+    IsHideItemObject: 0
+    Hide_ItemObject: []
+    IsGetItem: 0
+    itemObject: {fileID: 0}
+    buttonObject: {fileID: 0}
+    IsUseItem: 0
+    useItemObject: {fileID: 0}
+    useButtonObject: {fileID: 0}
 --- !u!4 &896647560 stripped
 Transform:
   m_PrefabParentObject: {fileID: 407462, guid: bdafee10e1b129f4b80f418e5f990202, type: 2}
@@ -21486,6 +21783,59 @@ Transform:
   m_PrefabParentObject: {fileID: 4415241121895392, guid: 3c06f761a4cedf24fa4139820c28c09a,
     type: 2}
   m_PrefabInternal: {fileID: 898918753}
+--- !u!1 &903916788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 903916790}
+  - component: {fileID: 903916789}
+  m_Layer: 5
+  m_Name: ButtonObj_DrawTopShelve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &903916789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903916788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb15f90b40dea84dbefaf5e3ed328e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: ButtonObj_DrawTopShelve
+  OnLoadValue: 0
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 0}
+  targetButton:
+  - {fileID: 602448750}
+--- !u!224 &903916790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903916788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 602448748}
+  m_Father: {fileID: 363180317}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 227.3, y: -20.9}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &906916911 stripped
 Transform:
   m_PrefabParentObject: {fileID: 423436, guid: 243143a9bc5a7d940a72b7a7655fc1b3, type: 2}
@@ -21517,7 +21867,6 @@ RectTransform:
   m_Children:
   - {fileID: 1861401448}
   - {fileID: 1912875133}
-  - {fileID: 602448748}
   - {fileID: 1808541994}
   m_Father: {fileID: 1710630458}
   m_RootOrder: 0
@@ -24316,11 +24665,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1345903886}
+    m_TransformParent: {fileID: 1353237217}
     m_Modifications:
     - target: {fileID: 485748, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.009002729
+      value: -0.009002723
       objectReference: {fileID: 0}
     - target: {fileID: 485748, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
       propertyPath: m_LocalPosition.y
@@ -24328,7 +24677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485748, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.21099997
+      value: 0.21100006
       objectReference: {fileID: 0}
     - target: {fileID: 485748, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
       propertyPath: m_LocalRotation.x
@@ -24348,7 +24697,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485748, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 485748, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -27067,8 +27416,9 @@ MonoBehaviour:
     Show_InitObject: []
     IsHideInitObject: 0
     Hide_InitObject: []
-    IsShowButtonObject: 0
-    Show_ButtonObject: []
+    IsShowButtonObject: 1
+    Show_ButtonObject:
+    - {fileID: 1724339781}
     IsHideButtonObject: 0
     Hide_ButtonObject: []
     IsShowItemObject: 0
@@ -27664,7 +28014,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1551142345}
+  - {fileID: 887919082}
+  - {fileID: 243283254}
   m_Father: {fileID: 252297286}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33081,7 +33434,7 @@ Transform:
   m_Children:
   - {fileID: 1838033894}
   - {fileID: 1515051852}
-  - {fileID: 1427202290}
+  - {fileID: 1353237217}
   m_Father: {fileID: 181322315}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33408,6 +33761,52 @@ MonoBehaviour:
   targetGameObject: {fileID: 0}
   IsOnceTrigger: 1
   Triggers: []
+--- !u!1 &1353237216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1353237217}
+  - component: {fileID: 1353237218}
+  m_Layer: 0
+  m_Name: InitObj_GoldLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1353237217
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353237216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1427202290}
+  m_Father: {fileID: 1345903886}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353237218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353237216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec49bc3c91c06446acd11c3fe7d0bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: InitObj_GoldLock
+  OnLoadValue: 1
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 1757633541}
 --- !u!1 &1353633310 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1177561605793614, guid: 620abb905dd09314e9235dc6888ed94c,
@@ -35063,7 +35462,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\uAE08\uC0C9\uD0A4\uC0AC\uC6A9"
 --- !u!222 &1409676307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36930,7 +37329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\uC704\uC5D0\uAEBC\uB4E4\uC5B4\uC62C\uB9AC\uAE30"
 --- !u!222 &1488585371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37465,7 +37864,7 @@ GameObject:
   - component: {fileID: 1515051854}
   - component: {fileID: 1515051853}
   m_Layer: 0
-  m_Name: SM_Prop_ToiletBrush_Stick_01
+  m_Name: I006_ToiletBrush_Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39212,6 +39611,99 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550660989}
+--- !u!1 &1551142344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1551142345}
+  - component: {fileID: 1551142346}
+  m_Layer: 0
+  m_Name: Trigger_GetToiletBrush_trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1551142345
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551142344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1132856046}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551142346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551142344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9309e7ecff59a4a926e93767309d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: Trigger_GetToiletBrush_trigger
+  OnLoadValue: 1
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 0}
+  IsOnceTrigger: 1
+  Triggers:
+  - index: Trigger_GetToiletBrush
+    desc: 
+    IsShowButton: 0
+    Show_Button: []
+    IsHideButton: 0
+    Hide_Button: []
+    IsSwitchButton: 0
+    Switch_Button: []
+    IsShowTrigger: 0
+    Show_TriggerName: []
+    IsHideTrigger: 0
+    Hide_TriggerName: []
+    IsShowObject: 0
+    Show_Object: []
+    IsHideObject: 0
+    Hide_Object: []
+    IsPlayMotion: 0
+    Play_MotionName: 
+    IsPlaySound: 0
+    Play_SoundName: 
+    IsPlayEffect: 0
+    Play_Effect: 
+    IsSendTrigger: 0
+    Send_TriggerName: 
+    IsShowTriggerObject: 0
+    Show_TriggerObject: []
+    IsHideTriggerObject: 0
+    Hide_TriggerObject: []
+    IsShowInitObject: 0
+    Show_InitObject: []
+    IsHideInitObject: 0
+    Hide_InitObject: []
+    IsShowButtonObject: 0
+    Show_ButtonObject: []
+    IsHideButtonObject: 0
+    Hide_ButtonObject: []
+    IsShowItemObject: 0
+    Show_ItemObject: []
+    IsHideItemObject: 0
+    Hide_ItemObject: []
+    IsGetItem: 1
+    itemObject: {fileID: 675671527}
+    buttonObject: {fileID: 859924642}
+    IsUseItem: 0
+    useItemObject: {fileID: 0}
+    useButtonObject: {fileID: 0}
 --- !u!1001 &1553502291
 Prefab:
   m_ObjectHideFlags: 0
@@ -39636,6 +40128,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1576658467}
+--- !u!1 &1577516901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1577516902}
+  - component: {fileID: 1577516904}
+  - component: {fileID: 1577516903}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1577516902
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577516901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2049071706}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1577516903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577516901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uD654\uC7A5\uC2E4\uC194\uD68D\uB4DD"
+--- !u!222 &1577516904
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577516901}
 --- !u!4 &1584468722 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4314498151146096, guid: 61804a9727c173448967a4c4c68a5fc8,
@@ -42510,8 +43076,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1724339780}
+  - component: {fileID: 1724339781}
+  - component: {fileID: 1724339782}
   m_Layer: 5
-  m_Name: Buttons
+  m_Name: ButtonObj_UseGoldKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42533,9 +43101,41 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -189.7, y: 7.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1724339781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724339779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb15f90b40dea84dbefaf5e3ed328e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Index: ButtonObj_UseGoldKey
+  OnLoadValue: 1
+  isTrueOnInit: 1
+  targetGameObject: {fileID: 0}
+  targetButton:
+  - {fileID: 26252384}
+--- !u!114 &1724339782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724339779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de6fbe39743df34cadb42fed0b49d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButton: {fileID: 26252384}
+  NeedItemString: I001
+  SendTriggerIndex: Trigger_UseGoldKey
 --- !u!1 &1724455318
 GameObject:
   m_ObjectHideFlags: 0
@@ -43278,6 +43878,10 @@ MonoBehaviour:
   OnLoadValue: 0
   isTrueOnInit: 1
   targetGameObject: {fileID: 251954282}
+--- !u!1 &1757633541 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 117258, guid: f28bafb0443ef0a4da4160755d9c2380, type: 2}
+  m_PrefabInternal: {fileID: 1004430335}
 --- !u!1 &1768337605
 GameObject:
   m_ObjectHideFlags: 0
@@ -44449,7 +45053,7 @@ RectTransform:
   m_Children:
   - {fileID: 1861968589}
   m_Father: {fileID: 912441154}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -50631,6 +51235,117 @@ Transform:
   m_Father: {fileID: 343778661}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2049071702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2049071706}
+  - component: {fileID: 2049071705}
+  - component: {fileID: 2049071704}
+  - component: {fileID: 2049071703}
+  m_Layer: 5
+  m_Name: Button_gettoiletbrush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2049071703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049071702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2049071704}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2049071704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049071702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.409}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2049071705
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049071702}
+--- !u!224 &2049071706
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049071702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1577516902}
+  m_Father: {fileID: 859924643}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2049195582 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1830278637828938, guid: 0d9eb53229fd4e4428e17f457310aada,
@@ -50773,19 +51488,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonObjects:
+  - {fileID: 903916789}
   - {fileID: 309771387}
   - {fileID: 67974627}
   - {fileID: 658585864}
+  - {fileID: 859924642}
   - {fileID: 1229749007}
   - {fileID: 716236790}
+  - {fileID: 463301931}
   - {fileID: 1863217167}
   - {fileID: 145548294}
   - {fileID: 935987598}
+  - {fileID: 1724339781}
   - {fileID: 2119626012}
   - {fileID: 143056847}
   - {fileID: 1882582202}
   - {fileID: 253819877}
-  - {fileID: 463301931}
   initObjects:
   - {fileID: 1776068690}
   - {fileID: 1995132174}
@@ -50802,6 +51520,7 @@ MonoBehaviour:
   - {fileID: 1059266911}
   - {fileID: 714467254}
   - {fileID: 29411258}
+  - {fileID: 1353237218}
 --- !u!4 &2069794731
 Transform:
   m_ObjectHideFlags: 0
