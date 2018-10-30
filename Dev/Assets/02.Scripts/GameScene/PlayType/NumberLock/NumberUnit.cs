@@ -57,7 +57,7 @@ public class NumberUnit : MonoBehaviour
                 //for test
                 //Debug.Log("클릭버튼");
 
-                targetObj.transform.DOLocalMove(movePos, 0.1f).SetLoops(2, LoopType.Yoyo).OnStart(SetClickDisable).OnComplete(SetClickable).Play();
+                targetObj.transform.DOLocalMove(movePos, 0.2f).SetLoops(2, LoopType.Yoyo).OnStart(SetClickDisable).OnComplete(SetClickable).Play();
          
                 mother.SetValue(thisValue);
             }
