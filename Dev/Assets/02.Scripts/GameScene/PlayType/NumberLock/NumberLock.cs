@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class NumberLock : MonoBehaviour
 {
@@ -14,9 +15,16 @@ public class NumberLock : MonoBehaviour
     public List<NumberImage> numberImages;
     public string rightValue;
     public string nowValue;
+
+    public int MaxInputCount;
+    private int NowInputCount = 0;
+    public List<GameObject> MoveObjects;
+    public string WrongSoundString;
+
     public void OnEnable()
     {
         ResetValue();
+        NowInputCount = 0;
     }
     public void Start()
     {
@@ -39,8 +47,24 @@ public class NumberLock : MonoBehaviour
         }
         ResetValue();
     }
+    public void NoticeWrongNumber()
+    {
+        foreach (var e in MoveObjects)
+        {
+            e.transform.DOShakePosition(0.5f,0.2f,30).Play();
+        }
+        //WrongSoundString 을 Sound Event 로 보냄
+        ResetValue();
+        NowInputCount = 0;
+    }
     public void SetValue(string value)
     {
+        if(NowInputCount >= MaxInputCount)
+        {
+            NoticeWrongNumber();
+            return;
+        }
+        NowInputCount++;
         if (nowValue.Length < rightValue.Length)
         {
             nowValue += value;
