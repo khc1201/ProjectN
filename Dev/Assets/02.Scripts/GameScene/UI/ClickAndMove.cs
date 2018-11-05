@@ -24,7 +24,8 @@ public class ClickAndMove : MonoBehaviour
     {
         IsUsed = false;
         //if (IsRotate) initPos = targetObj.transform.localEulerAngles;
-        initPos = targetObj.transform.localPosition;
+        if(initPos==null && !(IsRotate))initPos = targetObj.transform.localPosition;
+        if (IsRotate) initPos = targetObj.transform.localEulerAngles;
         buttonUI = this.gameObject.GetComponent<Button>();
      
         buttonInitPos = buttonUI.transform.localPosition;
@@ -43,7 +44,7 @@ public class ClickAndMove : MonoBehaviour
 
         if (IsRotate)
         {
-            tween = targetObj.transform.DOLocalRotate(Vector3.zero, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+            tween = targetObj.transform.DOLocalRotate(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
         }
         else
         {
