@@ -16,17 +16,24 @@ public class ClickAndMove : MonoBehaviour
     public Vector3 initPos;
     public Vector3 movePos;
     public float moveY;
-    public bool IsUsed = false;
+    public bool IsUsed;
     private Tween tween;
-    public bool IsRotate = false;
+    public bool IsRotate;
 
+    
     public void OnEnable()
     {
         IsUsed = false;
-        //if (IsRotate) initPos = targetObj.transform.localEulerAngles;
-        //if(initPos == null && !(IsRotate))initPos = targetObj.transform.localPosition;
-        if (IsRotate) initPos = targetObj.transform.localEulerAngles;
-        else { initPos = targetObj.transform.localPosition; }
+
+        if (IsRotate)
+        {
+            initPos = targetObj.transform.localEulerAngles;
+        }
+        else
+        {
+            initPos = targetObj.transform.localPosition;
+        }
+        
         buttonUI = this.gameObject.GetComponent<Button>();
      
         buttonInitPos = buttonUI.transform.localPosition;
@@ -36,23 +43,24 @@ public class ClickAndMove : MonoBehaviour
     {
         tween.Pause();
         buttonUI.transform.localPosition = buttonInitPos;
-        targetObj.transform.localPosition = initPos;
         IsUsed = false;
         foreach (var e in otherButtonUI)
         {
             e.enabled = true;
         }
-
+        OnClickMove();
+        
         if (IsRotate)
         {
             tween = targetObj.transform.DOLocalRotate(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
         }
         else
         {
-            buttonUI.transform.localPosition = new Vector2(this.transform.localPosition.x, buttonInitPos.y);
             tween = targetObj.transform.DOLocalMove(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
         }
+        
     }
+    
     private void SetButton()
     {
         buttonUI.onClick.RemoveListener(OnClickMove);
@@ -95,7 +103,8 @@ public class ClickAndMove : MonoBehaviour
             //buttonUI.transform.position = Camera.current.WorldToScreenPoint(initPos);
             if (IsRotate)
             {
-                tween = targetObj.transform.DOLocalRotate(Vector3.zero, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+                //tween = targetObj.transform.DOLocalRotate(Vector3.zero, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
+                tween = targetObj.transform.DOLocalRotate(initPos, moveSpeed).OnStart(OnMove).OnComplete(EndMove).Play();
             }
             else
             {

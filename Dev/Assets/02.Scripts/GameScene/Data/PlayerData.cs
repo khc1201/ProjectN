@@ -126,6 +126,7 @@ public class PlayerData : MonoBehaviour, IListener
         sw.WriteLine(stringData);
         sw.Close();
     }
+
     public void CreateInitData()
     {
         initData = new Dictionary<string, bool>();
@@ -133,6 +134,7 @@ public class PlayerData : MonoBehaviour, IListener
         var sw = new StreamWriter(new FileStream(initdataPath, FileMode.CreateNew));
         sw.WriteLine(stringData);
     }
+
     public void LoadData()
     {
         var sr = new StreamReader(new FileStream(dataPath, FileMode.Open));
@@ -140,6 +142,7 @@ public class PlayerData : MonoBehaviour, IListener
         sr.Close();
         playData = JsonReader.Deserialize<PlayData>(stringData);
     }
+
     public void LoadInitData()
     {
         var sr = new StreamReader(new FileStream(initdataPath, FileMode.Open));
@@ -147,6 +150,7 @@ public class PlayerData : MonoBehaviour, IListener
         sr.Close();
         initData = JsonReader.Deserialize<Dictionary<string,bool>>(stringData);
     }
+
     public void SaveData()
     {
         string stringData = JsonWriter.Serialize(playData);
