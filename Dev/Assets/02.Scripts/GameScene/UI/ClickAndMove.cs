@@ -20,11 +20,11 @@ public class ClickAndMove : MonoBehaviour
     private Tween tween;
     public bool IsRotate;
 
-    
-    public void OnEnable()
+    public void Start()
     {
         IsUsed = false;
-
+        buttonUI = this.gameObject.GetComponent<Button>();
+        buttonInitPos = buttonUI.transform.localPosition;
         if (IsRotate)
         {
             initPos = targetObj.transform.localEulerAngles;
@@ -33,22 +33,18 @@ public class ClickAndMove : MonoBehaviour
         {
             initPos = targetObj.transform.localPosition;
         }
-        
-        buttonUI = this.gameObject.GetComponent<Button>();
-     
-        buttonInitPos = buttonUI.transform.localPosition;
         SetButton();
     }
+
     public void OnDisable()
     {
-        tween.Pause();
+        //tween.Pause();
         buttonUI.transform.localPosition = buttonInitPos;
         IsUsed = false;
         foreach (var e in otherButtonUI)
         {
             e.enabled = true;
         }
-        OnClickMove();
         
         if (IsRotate)
         {

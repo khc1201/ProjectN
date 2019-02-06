@@ -18,6 +18,7 @@ public class NumberUnit : MonoBehaviour
     {
         buttonObj = this.gameObject.GetComponent<Button>();
         buttonObj.onClick.RemoveAllListeners();
+        //mother = this.transform.parent.GetComponent<NumberLock>();
         buttonObj.onClick.AddListener(OnClick);
         //csEventManager.Instance.AddListener(EVENT_TYPE.INIT_OBJECT, this);
     }

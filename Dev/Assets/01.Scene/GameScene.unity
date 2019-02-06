@@ -25276,7 +25276,7 @@ MonoBehaviour:
   numberImages: []
   rightValue: 0607
   nowValue: 
-  MaxInputCount: 0
+  MaxInputCount: 10
   MoveObjects: []
   WrongSoundString: 
 --- !u!1 &800886755
@@ -37004,7 +37004,7 @@ MonoBehaviour:
   numberImages: []
   rightValue: 2112212
   nowValue: 
-  MaxInputCount: 0
+  MaxInputCount: 10
   MoveObjects: []
   WrongSoundString: 
 --- !u!1 &1127192324
